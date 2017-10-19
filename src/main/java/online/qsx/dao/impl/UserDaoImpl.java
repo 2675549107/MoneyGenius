@@ -8,26 +8,52 @@ import org.springframework.stereotype.Repository;
 import online.qsx.common.BaseDao;
 import online.qsx.dao.UserDao;
 import online.qsx.model.User;
+import online.qsx.model.UserGroup;
 
 @Repository
 public class UserDaoImpl implements UserDao{
 	@Autowired
 	private BaseDao baseDao;
 
+	/**
+	 * 查找所有用户
+	 * */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAll() {
 		return (List<User>)baseDao.getHibernateTemplate().find("from User");
 	}
 	
+	/**
+	 * 根据姓名查找
+	 * */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getUserByName(String userName) {
-		return (List<User>)baseDao.getHibernateTemplate().find("from User where userName = ?", userName);
+		return (List<User>)baseDao.getHibernateTemplate().find("from User where userName like ?", "%"+userName+"%");
 	}
 
+	/**
+	 * 添加用户
+	 * */
 	@Override
 	public void addUser(User user) {
 		baseDao.getHibernateTemplate().save(user);
+	}
+
+	/**
+	 * 修改用户
+	 * */
+	@Override
+	public void updateUser(User user) {
+		baseDao.getHibernateTemplate().update(user);
+	}
+
+	/**
+	 * 删除指定用户
+	 * */
+	@Override
+	public void deleteUser(User user) {
+		baseDao.getHibernateTemplate().delete(user);
 	}
 }

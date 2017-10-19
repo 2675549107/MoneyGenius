@@ -1,10 +1,15 @@
 package online.qsx.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +39,13 @@ public class User {
 	@Column
 	private String password;
 	
+	@Column(name = "usergroup_id")
+	private Integer userGroupId;
+	
+	//用户与用户组关系
+/*	@ManyToOne(fetch = FetchType.LAZY,cascade={CascadeType.ALL})
+	@JoinColumn(name="usergroup_id")
+	private UserGroup userGroup;*/
 	
 	//setter and getter
 	public long getUesrId() {
@@ -50,6 +62,10 @@ public class User {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 
 	public void setPhone(String phone) {
@@ -88,6 +104,24 @@ public class User {
 		this.password = password;
 	}
 	
+/*	public UserGroup getUserGroup() {
+		return userGroup;
+	}
+
+	public void setUserGroup(UserGroup userGroup) {
+		this.userGroup = userGroup;
+	}*/
+	
+	
+
+	public Integer getUserGroupId() {
+		return userGroupId;
+	}
+
+	public void setUserGroupId(Integer userGroupId) {
+		this.userGroupId = userGroupId;
+	}
+
 	//toStirng
 	@Override
 	public String toString() {

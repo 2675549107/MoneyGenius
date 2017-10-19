@@ -42,19 +42,19 @@ public class TestUser {
 		}
 	}
 	
-	@Test
-	public void testAddUser() {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext-server.xml");
-		UserServerImpl userServerImpl = (UserServerImpl)ctx.getBean("userServerImpl");
-		
-		User user = new User();
-		user.setCreditworthiness(75);
-		user.setEmail("2675549107@qq.com");
-		user.setPassword("147258");
-		user.setPhone("18408247822");
-		user.setStatus(1);
-		user.setUserName("Dike");
-		
-		userServerImpl.addUser(user);
-	}
+//	@Test
+//	public void testAddUser() {
+//		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext-server.xml");
+//		UserServerImpl userServerImpl = (UserServerImpl)ctx.getBean("userServerImpl");
+//		
+//		User user = new User();
+//		user.setCreditworthiness(75);
+//		user.setEmail("2675549107@qq.com");
+//		user.setPassword("147258");
+//		user.setPhone("18408247822");
+//		user.setStatus(1);
+//		user.setUserName("Dike");
+//		
+//		userServerImpl.addUser(user);
+//	}
 }

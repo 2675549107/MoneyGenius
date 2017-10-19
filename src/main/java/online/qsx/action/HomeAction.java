@@ -1,6 +1,8 @@
+/**
+ * 
+ */
 package online.qsx.action;
 
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +11,13 @@ import org.springframework.stereotype.Component;
 import online.qsx.model.User;
 import online.qsx.model.UserGroup;
 import online.qsx.server.UserServer;
-@Component("userAction")
-public class UserAction {
 
+/**
+ * 进入主页
+ * @author Dike
+ */
+@Component(value = "homeAction")
+public class HomeAction {
 	@Autowired
 	private UserServer userServer;
 	
@@ -22,23 +28,32 @@ public class UserAction {
 	private Set<User> users;
 	
 	/**
-	 * 投资功能（买）
+	 * 前台入口
+	 * */
+	public String home() {
+		return "home";
+	}
+	
+	/**
+	 * 管理员入口
+	 * */
+	public String adminHome() {
+		return "adminHome";
+	}
+	
+	/**
+	 * 注册功能
+	 * */
+	public String register() {
+		user.setUserGroupId(userGroup.getUserGroupId());
+		userServer.addUser(user);
+		return "success";
+	}
+	
+	/**
+	 * 登录功能
 	 * */
 
-	
-	/**
-	 * 融资功能（卖）
-	 * */
-	
-	
-	/**
-	 * 查看自己信息
-	 * */
-
-	
-	/**
-	 * 修改自己信息
-	 * */
 	
 	//getter and setter
 	public UserServer getUserServer() {
@@ -72,5 +87,4 @@ public class UserAction {
 	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
-	
 }

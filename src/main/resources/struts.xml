@@ -7,7 +7,19 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 
     <package name="default" namespace="/" extends="struts-default">
+    	<action name="homeAction_*" class="homeAction" method="{1}">
+    		<result name="home">WEB-INF/jsp/index.jsp</result>
+    		<result name="adminHome">/WEB-INF/jsp/admin/index.jsp</result>
+    		<result name="success">/success.html</result>
+    	</action>
+    
         <action name="userAction_*" class="userAction" method="{1}">
+        	
+        </action>
+        
+        <action name="adminAction_*" class="adminAction" method="{1}">
+        	<result name="getAllUser">/WEB-INF/jsp/admin/index.jsp</result>
+        	<result name="openS">/WEB-INF/jsp/admin/search.jsp</result>
         </action>
     </package>
 </struts>
