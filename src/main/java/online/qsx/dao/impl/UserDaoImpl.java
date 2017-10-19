@@ -7,25 +7,27 @@ import org.springframework.stereotype.Repository;
 
 import online.qsx.common.BaseDao;
 import online.qsx.dao.UserDao;
-import online.qsx.model.UserModel;
+import online.qsx.model.User;
 
 @Repository
-public class UserDaoImpl {
+public class UserDaoImpl implements UserDao{
 	@Autowired
 	private BaseDao baseDao;
 
 	@SuppressWarnings("unchecked")
-	public List<UserModel> getUsers() {
-		return (List<UserModel>) baseDao.getHibernateTemplate().find("from UserModel");
+	@Override
+	public List<User> getAll() {
+		return (List<User>)baseDao.getHibernateTemplate().find("from User");
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getUserByName(String userName) {
+		return (List<User>)baseDao.getHibernateTemplate().find("from User where userName = ?", userName);
 	}
 
-	
-	public void deleteUserModel(UserModel userModel) {
-		baseDao.getHibernateTemplate().delete(userModel);	
-	}
-
-	
-	public void addUser(UserModel userModel) {
-		baseDao.getHibernateTemplate().save(userModel);
+	@Override
+	public void addUser(User user) {
+		baseDao.getHibernateTemplate().save(user);
 	}
 }

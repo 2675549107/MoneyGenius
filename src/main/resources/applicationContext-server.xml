@@ -11,4 +11,5 @@
     <!-- 识别Server -->
     <context:component-scan base-package="online.qsx.server.impl"/>
     
+    <import resource="applicationContext-dao.xml"/>
 </beans>

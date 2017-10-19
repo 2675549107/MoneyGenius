@@ -7,13 +7,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import online.qsx.dao.impl.UserDaoImpl;
-import online.qsx.model.UserModel;
+import online.qsx.model.User;
 import online.qsx.server.UserServer;
 
-@Service
+
 @Transactional
-public class UserServerImpl {
+@Service()
+public class UserServerImpl implements UserServer{
 	
 	@Autowired
 	private UserDaoImpl userDaoImpl;
+	@Override
+	public void addUser(User user) {
+		userDaoImpl.addUser(user);
+	}
 }

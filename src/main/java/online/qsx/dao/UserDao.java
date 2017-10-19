@@ -2,12 +2,12 @@ package online.qsx.dao;
 
 import java.util.List;
 
-import online.qsx.model.UserModel;
+import online.qsx.model.User;
 
 public interface UserDao {
-	public List<UserModel> getUsers();
+	public List<User> getAll();
 	
-	public void deleteUserModel(UserModel userModel);
+	public List<User> getUserByName(String userName);
 	
-	public void addUser(UserModel userModel);
+	public void addUser(User user);
 }
