@@ -3,8 +3,12 @@
  */
 package online.qsx.action;
 
+import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -27,6 +31,8 @@ public class HomeAction {
 	
 	private Set<User> users;
 	
+	private List<UserGroup> userGroupList;
+	
 	/**
 	 * 前台入口
 	 * */
@@ -42,17 +48,82 @@ public class HomeAction {
 	}
 	
 	/**
+	 * 管理员left
+	 * */
+	public String left() {
+		return "left";
+	}
+	
+	/**
+	 * 管理员投票
+	 * */
+	public String top() {
+		return "top";
+	}
+	
+	/**
+	 * 管理员index
+	 * */
+	public String adminIndex() {
+		return "adminIndex";
+	}
+	
+	/**
+	 * 打开注册页面
+	 * */
+	public String openRegister() {
+		userGroupList = userServer.getAllUserGroup();
+		return "openRegister";
+	}
+	
+	/**
 	 * 注册功能
 	 * */
 	public String register() {
 		user.setUserGroupId(userGroup.getUserGroupId());
+		user.setCreditworthiness(100);
+		user.setStatus(1);
 		userServer.addUser(user);
-		return "success";
+		return "backhome";
+	}
+	
+	/**
+	 * 打开登录页面
+	 * */
+	public String openLogin() {
+		return "openLogin";
 	}
 	
 	/**
 	 * 登录功能
 	 * */
+	public String login() {
+		User u = userServer.getUserByEmail(user);
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		if(u == null) {
+			session.setAttribute("noUser", 1);
+			return "openLogin";
+		}
+		else if(!u.getPassword().equals(user.getPassword())) {
+			session.setAttribute("noPassword", 1);
+			return "openLogin";
+		}
+		else {
+			userGroup = userServer.getGroupByGroupId(u.getUserGroupId());
+			session.setAttribute("currentuser", u);
+			System.out.println(userGroup.getUserGroupName());
+			if(userGroup.getUserGroupName().equals("系统管理员")) {
+				System.out.println("4444444");
+				return "adminHome";
+			}
+			else if (userGroup.getUserGroupName().equals("注册会员")) {
+				System.out.println("5555555");
+				return "home";
+			}
+		}
+		
+		return "openLogin";
+	}
 
 	
 	//getter and setter
@@ -86,5 +157,13 @@ public class HomeAction {
 
 	public void setUsers(Set<User> users) {
 		this.users = users;
+	}
+
+	public List<UserGroup> getUserGroupList() {
+		return userGroupList;
+	}
+
+	public void setUserGroupList(List<UserGroup> userGroupList) {
+		this.userGroupList = userGroupList;
 	}
 }

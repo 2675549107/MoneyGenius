@@ -24,7 +24,7 @@ public class UserAction {
 	/**
 	 * 投资功能（买）
 	 * */
-
+	
 	
 	/**
 	 * 融资功能（卖）

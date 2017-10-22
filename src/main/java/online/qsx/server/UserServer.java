@@ -15,5 +15,11 @@ public interface UserServer {
 	
 	public void deleteUser(User uer);
 
-	void addUser(User user);
+	public void addUser(User user);
+	
+	public User getUserByEmail(User user);
+	
+	public UserGroup getGroupByGroupId(int id);
+	
+	public List<UserGroup> getAllUserGroup();
 }

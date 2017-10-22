@@ -15,4 +15,10 @@ public interface UserDao {
 	public void updateUser(User user);
 	
 	public void deleteUser(User user);
+	
+	public User getUserByEmail(String email);
+	
+	public UserGroup getGroupByGroupId(int id);
+	
+	public List<UserGroup> getAllUserGroup();
 }

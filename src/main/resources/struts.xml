@@ -8,8 +8,17 @@
 
     <package name="default" namespace="/" extends="struts-default">
     	<action name="homeAction_*" class="homeAction" method="{1}">
-    		<result name="home">WEB-INF/jsp/index.jsp</result>
-    		<result name="adminHome">/WEB-INF/jsp/admin/index.jsp</result>
+    		<!-- 注册会员index入口 -->
+    		<result name="home">/WEB-INF/jsp/index.jsp</result>
+    		<!-- 管理员index入口 -->
+    		<!-- <result name="adminHome">/admin/zwtp_2_gi/main.jsp</result> -->
+    		<result name="adminHome">/WEB-INF/jsp/admin/zwtp_2_gi/main.jsp</result>
+    		<!-- 打开登录页面 -->
+    		<result name="openLogin">/WEB-INF/jsp/login.jsp</result>
+    		<!-- 打开注册页面 -->
+    		<result name="openRegister">/WEB-INF/jsp/register.jsp</result>
+    		<!-- 跳回homeaction -->
+    		<result type= "chain" name="backhome">homeAction_home</result>
     		<result name="success">/success.html</result>
     	</action>
     

@@ -59,6 +59,30 @@ public class UserServerImpl implements UserServer{
 		userDao.deleteUser(user);
 	}
 	
+	/**
+	 * 通过email得到用户
+	 * */
+	@Override
+	public User getUserByEmail(User user) {
+		return userDao.getUserByEmail(user.getEmail());
+	}
+
+	/**
+	 * 通过用户组id得到用户组
+	 * */
+	@Override
+	public UserGroup getGroupByGroupId(int id) {
+		return userDao.getGroupByGroupId(id);
+	}
+	
+	/**
+	 * 获得所有用户组
+	 * */
+	@Override
+	public List<UserGroup> getAllUserGroup() {
+		return userDao.getAllUserGroup();
+	}
+	
 	//setter and getter
 	public UserDao getUserDao() {
 		return userDao;
