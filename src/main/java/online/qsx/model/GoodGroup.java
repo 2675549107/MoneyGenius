@@ -33,7 +33,7 @@ public class GoodGroup {
 	
 	//产品类型组与产品关系
 	@OneToMany(fetch = FetchType.EAGER,cascade={CascadeType.ALL})
-	@JoinColumn(name="good_id")
+	@JoinColumn(name="goodgroup_id")
 	private Set<Good> goods;
 	
 	//setter and getter

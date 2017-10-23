@@ -45,7 +45,7 @@ public class Good {
 	@Column
 	private Integer status;
 	
-	@Column
+	@Column(name = "goodgroup_id")
 	private Integer goodGroupId;
 	
 	//用户与产品关系

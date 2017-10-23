@@ -12,6 +12,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import online.qsx.model.GoodGroup;
 import online.qsx.model.User;
 import online.qsx.model.UserGroup;
 import online.qsx.server.UserServer;
@@ -30,6 +31,8 @@ public class HomeAction {
 	private UserGroup userGroup;
 	
 	private Set<User> users;
+	
+	private GoodGroup goodGroup;
 	
 	private List<UserGroup> userGroupList;
 	
@@ -125,6 +128,18 @@ public class HomeAction {
 		return "openLogin";
 	}
 
+	/**
+	 * 展示商品
+	 * */
+	public String showGoods() {
+		if(goodGroup==null || goodGroup.getGoodGroupId()==0) {
+			
+		}
+		else {
+			
+		}
+		return "showGoods";
+	}
 	
 	//getter and setter
 	public UserServer getUserServer() {
@@ -165,5 +180,13 @@ public class HomeAction {
 
 	public void setUserGroupList(List<UserGroup> userGroupList) {
 		this.userGroupList = userGroupList;
+	}
+
+	public GoodGroup getGoodGroup() {
+		return goodGroup;
+	}
+
+	public void setGoodGroup(GoodGroup goodGroup) {
+		this.goodGroup = goodGroup;
 	}
 }
