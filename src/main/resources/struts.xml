@@ -12,7 +12,7 @@
     		<result name="home">/WEB-INF/jsp/index.jsp</result>
     		<!-- 管理员index入口 -->
     		<!-- <result name="adminHome">/admin/zwtp_2_gi/main.jsp</result> -->
-    		<result name="adminHome">/WEB-INF/jsp/admin/zwtp_2_gi/main.jsp</result>
+    		<result name="adminHome">/admin/zwtp_2_gi/main.jsp</result>
     		<!-- 打开登录页面 -->
     		<result name="openLogin">/WEB-INF/jsp/login.jsp</result>
     		<!-- 打开注册页面 -->
