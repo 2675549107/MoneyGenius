@@ -40,7 +40,11 @@ public class HomeAction {
 	
 	private List<UserGroup> userGroupList;
 	
+<<<<<<< HEAD
 	private List<Good> goods; 
+=======
+	private List<User> userList;
+>>>>>>> 89ebc5b20f2e81fd74a8b2562f7a875b232d9351
 	/**
 	 * 前台入口
 	 * */
@@ -52,6 +56,7 @@ public class HomeAction {
 	 * 管理员入口
 	 * */
 	public String adminHome() {
+	    userList = userServer.getAllUser();
 		return "adminHome";
 	}
 	
@@ -73,6 +78,7 @@ public class HomeAction {
 	 * 管理员index
 	 * */
 	public String adminIndex() {
+	    
 		return "adminIndex";
 	}
 	
@@ -187,6 +193,15 @@ public class HomeAction {
 		this.userGroupList = userGroupList;
 	}
 
+<<<<<<< HEAD
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+=======
 	public GoodGroup getGoodGroup() {
 		return goodGroup;
 	}
@@ -194,6 +209,7 @@ public class HomeAction {
 	public void setGoodGroup(GoodGroup goodGroup) {
 		this.goodGroup = goodGroup;
 	}
+<<<<<<< HEAD
 
 	public GoodServer getGoodServer() {
 		return goodServer;
@@ -210,4 +226,7 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
+=======
+>>>>>>> c490b79251e5119ce415da286d111ebb579fffff
+>>>>>>> 89ebc5b20f2e81fd74a8b2562f7a875b232d9351
 }

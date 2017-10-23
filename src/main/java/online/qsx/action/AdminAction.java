@@ -32,6 +32,7 @@ public class AdminAction {
 	 * */
 	public String getAllUser() {
 		userList = userServer.getAllUser();
+		System.out.println("123");
 		return "getAllUser";
 	}
 	
