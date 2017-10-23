@@ -20,11 +20,11 @@
     		<result type= "chain" name="backhome">homeAction_home</result>
     		<!-- 跳转到投资界面 -->
     		<result name="showGoods">/WEB-INF/jsp/investment.jsp</result>
-    		<result name="success">/success.html</result>
     	</action>
     
         <action name="userAction_*" class="userAction" method="{1}">
-        	
+        	<result name="goodDetails">/WEB-INF/jsp/details.jsp</result>
+        	<result name="success">/WEB-INF/jsp/success.jsp</result>
         </action>
         
         <action name="adminAction_*" class="adminAction" method="{1}">

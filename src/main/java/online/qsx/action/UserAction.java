@@ -6,25 +6,49 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import online.qsx.model.Good;
+import online.qsx.model.GoodGroup;
 import online.qsx.model.User;
 import online.qsx.model.UserGroup;
+import online.qsx.server.GoodServer;
 import online.qsx.server.UserServer;
 @Component("userAction")
 public class UserAction {
 
 	@Autowired
 	private UserServer userServer;
+	@Autowired
+	private GoodServer goodServer;
 	
 	private User user;
 	
 	private UserGroup userGroup;
 	
+	private GoodGroup goodGroup;
+	
 	private Set<User> users;
+	
+	private Good good;
+	
+	/**购买的数量*/
+	private Integer num;
+	
+	/**
+	 *	打开商品详情
+	 * */
+	public String goodDetails() {
+		good = goodServer.getGoodsById(good.getGoodId());
+		goodGroup = goodServer.getGoodsGroupByGroupId(good.getGoodGroupId());
+		return "goodDetails";
+	}
 	
 	/**
 	 * 投资功能（买）
 	 * */
-	
+	public String buyGoods() {
+		System.out.println(num);
+		return "success";
+	}
 	
 	/**
 	 * 融资功能（卖）
@@ -72,5 +96,36 @@ public class UserAction {
 	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
-	
+
+	public Good getGood() {
+		return good;
+	}
+
+	public void setGood(Good good) {
+		this.good = good;
+	}
+
+	public GoodServer getGoodServer() {
+		return goodServer;
+	}
+
+	public void setGoodServer(GoodServer goodServer) {
+		this.goodServer = goodServer;
+	}
+
+	public GoodGroup getGoodGroup() {
+		return goodGroup;
+	}
+
+	public void setGoodGroup(GoodGroup goodGroup) {
+		this.goodGroup = goodGroup;
+	}
+
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
+	}
 }

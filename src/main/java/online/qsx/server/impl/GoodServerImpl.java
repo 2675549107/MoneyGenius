@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import online.qsx.dao.GoodDao;
 import online.qsx.model.Good;
+import online.qsx.model.GoodGroup;
 import online.qsx.server.GoodServer;
 
 /**
@@ -29,8 +30,18 @@ public class GoodServerImpl implements GoodServer{
 	}
 
 	@Override
-	public List<Good> getGoodsById(int id) {
+	public List<Good> getGoodsByGroupId(int id) {
+		return goodDao.getGoodsByGroupId(id);
+	}
+	
+	@Override
+	public Good getGoodsById(int id) {
 		return goodDao.getGoodsById(id);
+	}
+	
+	@Override
+	public GoodGroup getGoodsGroupByGroupId(int id) {
+		return goodDao.getGoodsGroupByGroupId(id);
 	}
 	
 	//setter and getter
