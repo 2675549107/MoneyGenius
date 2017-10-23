@@ -12,9 +12,11 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import online.qsx.model.Good;
 import online.qsx.model.GoodGroup;
 import online.qsx.model.User;
 import online.qsx.model.UserGroup;
+import online.qsx.server.GoodServer;
 import online.qsx.server.UserServer;
 
 /**
@@ -25,6 +27,8 @@ import online.qsx.server.UserServer;
 public class HomeAction {
 	@Autowired
 	private UserServer userServer;
+	@Autowired
+	private GoodServer goodServer;
 	
 	private User user;
 	
@@ -36,7 +40,11 @@ public class HomeAction {
 	
 	private List<UserGroup> userGroupList;
 	
+<<<<<<< HEAD
+	private List<Good> goods; 
+=======
 	private List<User> userList;
+>>>>>>> 89ebc5b20f2e81fd74a8b2562f7a875b232d9351
 	/**
 	 * 前台入口
 	 * */
@@ -136,10 +144,10 @@ public class HomeAction {
 	 * */
 	public String showGoods() {
 		if(goodGroup==null || goodGroup.getGoodGroupId()==0) {
-			
+			goods = goodServer.getAllGoods();
 		}
 		else {
-			
+			goods = goodServer.getGoodsById(goodGroup.getGoodGroupId());
 		}
 		return "showGoods";
 	}
@@ -199,4 +207,27 @@ public class HomeAction {
 	public void setGoodGroup(GoodGroup goodGroup) {
 		this.goodGroup = goodGroup;
 	}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+	public GoodServer getGoodServer() {
+		return goodServer;
+	}
+
+	public void setGoodServer(GoodServer goodServer) {
+		this.goodServer = goodServer;
+	}
+
+	public List<Good> getGoods() {
+		return goods;
+	}
+
+	public void setGoods(List<Good> goods) {
+		this.goods = goods;
+	}
+=======
+>>>>>>> c490b79251e5119ce415da286d111ebb579fffff
+>>>>>>> 89ebc5b20f2e81fd74a8b2562f7a875b232d9351
+>>>>>>> f5f9965c4a41824a809aaf4289597e325a8f9e68
 }
