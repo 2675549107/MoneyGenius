@@ -3,11 +3,19 @@
  */
 package online.qsx.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -39,6 +47,11 @@ public class Good {
 	
 	@Column
 	private Integer goodGroupId;
+	
+	//用户与产品关系
+	@OneToMany(fetch = FetchType.EAGER,cascade={CascadeType.ALL})
+	@JoinColumn(name="good_id")
+	private Set<UserAndGood> ugs;
 	
 	//setter and getter
 	public Integer getGoodId() {
@@ -95,5 +108,13 @@ public class Good {
 
 	public void setGoodGroupId(Integer goodGroupId) {
 		this.goodGroupId = goodGroupId;
+	}
+
+	public Set<UserAndGood> getUgs() {
+		return ugs;
+	}
+
+	public void setUgs(Set<UserAndGood> ugs) {
+		this.ugs = ugs;
 	}
 }
