@@ -29,6 +29,7 @@
         
         <action name="adminAction_*" class="adminAction" method="{1}">
         	<result name="getAllUser">admin/zwtp_2_gi/index.jsp</result>
+        	<result name="deleteUser">admin/zwtp_2_gi/index.jsp</result>
         	<result name="openS">/WEB-INF/jsp/admin/search.jsp</result>
         </action>
     </package>
