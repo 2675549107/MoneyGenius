@@ -13,7 +13,9 @@ public interface UserServer {
 	
 	public void updateUser(User user);
 	
-	public void deleteUser(User uer);
+	public User getUserById(Long index);
+	
+	public void deleteUser(User uer,Long id);
 
 	public void addUser(User user);
 	

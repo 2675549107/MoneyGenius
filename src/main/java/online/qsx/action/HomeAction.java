@@ -185,7 +185,6 @@ public class HomeAction {
 		this.userGroupList = userGroupList;
 	}
 
-<<<<<<< HEAD
     public List<User> getUserList() {
         return userList;
     }
@@ -193,7 +192,6 @@ public class HomeAction {
     public void setUserList(List<User> userList) {
         this.userList = userList;
     }
-=======
 	public GoodGroup getGoodGroup() {
 		return goodGroup;
 	}
@@ -201,5 +199,4 @@ public class HomeAction {
 	public void setGoodGroup(GoodGroup goodGroup) {
 		this.goodGroup = goodGroup;
 	}
->>>>>>> c490b79251e5119ce415da286d111ebb579fffff
 }

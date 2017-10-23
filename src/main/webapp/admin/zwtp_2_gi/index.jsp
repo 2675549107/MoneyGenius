@@ -54,16 +54,16 @@
                             data-events="operateEvents">操作</th>
                     </thead>
                     <tbody>
-                        <tr>
                             <c:forEach items="${userList}" var="user">
+                            <tr>
                                 <td>${user.uesrId}</td>
                                 <td>${user.userName}</td>
                                 <td>${user.creditworthiness}</td>
                                 <td>${user.email}</td>
                                 <td>${user.phone}</td>
                                 <td>${user.status}</td>
+                                </tr>
                             </c:forEach>
-                        </tr>
                     </tbody>
                 </table>
         </div>
@@ -127,7 +127,7 @@
 					field : 'id',
 					values : [ row.id ]
 				});
-
+				alert(e);
 			}
 		};
 
@@ -148,7 +148,7 @@
 				'<a rel="tooltip" title="Edit" class="table-action edit" href="javascript:void(0)" title="Edit">',
 				'<i class="fa fa-edit"></i>',
 				'</a>',
-				'<a rel="tooltip" title="Remove" class="table-action remove" href="${pageContext.request.contextPath }/adminAction_deleteUser?" title="Remove">',
+				'<a rel="tooltip" title="Remove" class="table-action remove" href="${pageContext.request.contextPath }/adminAction_deleteUser?index='+index+'" title="Remove">',
 				'<i class="fa fa-remove"></i>', '</a>' ].join('');
 	}
 </script>

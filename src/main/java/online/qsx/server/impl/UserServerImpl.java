@@ -42,7 +42,12 @@ public class UserServerImpl implements UserServer{
 	public List<User> getUserByName(User user) {
 		return userDao.getUserByName(user.getUserName());
 	}
-	
+	/**
+	 * 根据Id查找
+	 */
+	public User getUserById(Long id) {
+	    return userDao.getUserById(id);
+	}
 	/**
 	 * 修改用户
 	 * */
@@ -55,8 +60,8 @@ public class UserServerImpl implements UserServer{
 	 * 删除用户
 	 * */
 	@Override
-	public void deleteUser(User user) {
-		userDao.deleteUser(user);
+	public void deleteUser(User user,Long id) {
+	        userDao.deleteUser(user,id);
 	}
 	
 	/**

@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import jdk.nashorn.internal.ir.RuntimeNode.Request;
 import online.qsx.model.User;
 import online.qsx.model.UserGroup;
 import online.qsx.server.UserServer;
@@ -27,12 +28,12 @@ public class AdminAction {
 	
 	private List<User> userList;
 	
+	private Long index;
 	/**
 	 * 查看所有用户
 	 * */
 	public String getAllUser() {
 		userList = userServer.getAllUser();
-		System.out.println("123");
 		return "getAllUser";
 	}
 	
@@ -52,7 +53,6 @@ public class AdminAction {
 	 * 修改用户信息
 	 * */
 	public String modifyUser() {
-		userServer.updateUser(user);
 		userList = userServer.getAllUser();
 		return "getAllUser";
 	}
@@ -61,7 +61,11 @@ public class AdminAction {
 	 * 删除用户
 	 * */
 	public String deleteUser() {
-		userServer.deleteUser(user);
+	    System.out.println(index+1);
+	    User user = userServer.getUserById(index+1);
+	    if(user != null) {
+	        userServer.deleteUser(user,index+1);
+	    }
 		userList = userServer.getAllUser();
 		return "getAllUser";
 	}
@@ -98,4 +102,13 @@ public class AdminAction {
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
 	}
+
+    public Long getIndex() {
+        return index;
+    }
+
+    public void setIndex(Long index) {
+        this.index = index;
+    }
+
 }

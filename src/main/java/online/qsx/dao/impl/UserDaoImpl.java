@@ -2,6 +2,7 @@ package online.qsx.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
@@ -33,7 +34,12 @@ public class UserDaoImpl implements UserDao{
 	public List<User> getUserByName(String userName) {
 		return (List<User>)baseDao.getHibernateTemplate().find("from User where userName like ?", "%"+userName+"%");
 	}
-
+	/**
+	 * 根据ID查找
+	 */
+    public User getUserById(Long id) {
+        return (User) baseDao.getHibernateTemplate().get(User.class, id);
+    }
 	/**
 	 * 添加用户
 	 * */
@@ -54,8 +60,10 @@ public class UserDaoImpl implements UserDao{
 	 * 删除指定用户
 	 * */
 	@Override
-	public void deleteUser(User user) {
+	public void deleteUser(User user,Long id) {
 		baseDao.getHibernateTemplate().delete(user);
+		Query query =  baseDao.getSessionFactory().getCurrentSession().createQuery("update User set uesrId = uesrId - 1 where uesrId > "+id);
+		query.executeUpdate();
 	}
 
 	/**
