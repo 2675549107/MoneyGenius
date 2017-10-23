@@ -33,6 +33,7 @@ public class HomeAction {
 	
 	private List<UserGroup> userGroupList;
 	
+	private List<User> userList;
 	/**
 	 * 前台入口
 	 * */
@@ -44,6 +45,7 @@ public class HomeAction {
 	 * 管理员入口
 	 * */
 	public String adminHome() {
+	    userList = userServer.getAllUser();
 		return "adminHome";
 	}
 	
@@ -65,6 +67,7 @@ public class HomeAction {
 	 * 管理员index
 	 * */
 	public String adminIndex() {
+	    
 		return "adminIndex";
 	}
 	
@@ -166,4 +169,12 @@ public class HomeAction {
 	public void setUserGroupList(List<UserGroup> userGroupList) {
 		this.userGroupList = userGroupList;
 	}
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 }
