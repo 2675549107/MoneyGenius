@@ -44,7 +44,7 @@
                 <div class="menu_nav">
                     <ul>
                          <li class="active"><a href="javascript:return false;">首页</a></li>
-                         <li><a href="investment.html">我要投资</a></li>
+                         <li><a href="${pageContext.request.contextPath }/homeAction_showGoods">我要投资</a></li>
                          <li><a href="bailout.html">我要融资</a></li>
                          <li><a href="BeginnersGuide.html">新手指南</a></li>
                          <li><a href="Aboutus.html">关于我们</a></li>

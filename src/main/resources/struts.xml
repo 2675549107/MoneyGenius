@@ -18,6 +18,8 @@
     		<result name="openRegister">/WEB-INF/jsp/register.jsp</result>
     		<!-- 跳回homeaction -->
     		<result type= "chain" name="backhome">homeAction_home</result>
+    		<!-- 跳转到投资界面 -->
+    		<result name="showGoods">/WEB-INF/jsp/investment.jsp</result>
     		<result name="success">/success.html</result>
     	</action>
     
