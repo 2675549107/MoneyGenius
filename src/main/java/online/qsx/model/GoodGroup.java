@@ -60,6 +60,4 @@ public class GoodGroup {
 	public void setGoods(Set<Good> goods) {
 		this.goods = goods;
 	}
-
-
 }

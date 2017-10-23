@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -65,81 +66,13 @@
     </div>
     <div class="invest">
         <ul class="imglist">
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img02.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img03.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img04.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img05.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img06.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img07.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img08.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img09.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img10.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img02.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img03.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img04.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
-            <li>
-                <span><img src="admin/zwtp_2_gi/images/img05.png" /></span>
-                <h2><a href="details.html">各大投资平台介绍</a></h2>
-                <p><a href="details.html">详情</a></p>
-            </li>
+        	<c:forEach items="${goods }" var="good">
+	        	<li>
+	                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
+	                <h2><a href="details.html">${good.goodName }</a></h2>
+	                <p><a href="details.html">详情</a></p>
+	            </li>
+        	</c:forEach>
         </ul>
     </div>
     <img src="images/mycjj/footer.jpg" style="width: 100%;/*position: absolute*/;top: 2496px;">
