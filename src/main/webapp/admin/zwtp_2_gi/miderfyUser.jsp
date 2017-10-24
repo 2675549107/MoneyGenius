@@ -2,7 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd 
+
+">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -58,21 +60,22 @@
                 <li><label>信誉度<b>*</b></label>
                     <div class="vocation">
                         <select class="select1" name="userStatus">
-                            <option value="0" <c:if test="${userStatus==0}">selected</c:if>>极好</option>
+                        	
+                             <option value="0" <c:if test="${userStatus==0}">selected</c:if>>极好</option>
                             <option value="1" <c:if test="${userStatus==1}">selected</c:if>>良好</option>
                             <option value="2" <c:if test="${userStatus==2}">selected</c:if>>差</option>
-                            <option value="3" <c:if test="${userStatus==3}">selected</c:if>>极差</option>
-                        </select>
+                            <option value="3" <c:if test="${userStatus==3}">selected</c:if>>极差</option>  
+                        </select> 
                     </div>
                 </li>
                 <li><label>邮箱<b>*</b></label><input name="email" type="email" class="dfinput"  style="width:518px;" value="${user.email}"/></li>
                 <li><label>电话<b>*</b></label><input name="tel" type="tel" class="dfinput"  style="width:518px;" value="${user.phone}"/></li>
                                 <li><label>状态<b>*</b></label>
                     <div class="vocation">
-                        <select class="select1" name="userStatus1">
+<%--                         <select class="select1" name="userStatus1">
                             <option value="0" <c:if test="${userStatus1==0}">selected</c:if>>可用</option>
                             <option value="1" <c:if test="${userStatus1==1}">selected</c:if>>已查封</option>
-                        </select>
+                        </select> --%>
                     </div>
                 </li>
                 <li><label>备注<b>*</b></label>
