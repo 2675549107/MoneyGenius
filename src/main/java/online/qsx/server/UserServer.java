@@ -24,4 +24,6 @@ public interface UserServer {
 	public UserGroup getGroupByGroupId(int id);
 	
 	public List<UserGroup> getAllUserGroup();
+
+    public void updateUser(Long uesrId,String username, String email, Integer tel, Integer userStatus, Integer userStatus1);
 }

@@ -49,11 +49,11 @@ public class UserServerImpl implements UserServer{
 	    return userDao.getUserById(id);
 	}
 	/**
-	 * 修改用户
+	 * 根据用户名修改用户
 	 * */
 	@Override
-	public void updateUser(User user) {
-		userDao.updateUser(user);
+	public void updateUser(Long uesrId,String username, String email, Integer tel,Integer userStatus, Integer userStatus1) {
+	    userDao.updateUser(uesrId,username,email, tel, userStatus, userStatus1);
 	}
 	
 	/**
@@ -96,4 +96,11 @@ public class UserServerImpl implements UserServer{
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
+	/**
+	 * 更新
+	 */
+    @Override
+    public void updateUser(User user) {
+        userDao.updateUser(user);
+    }
 }

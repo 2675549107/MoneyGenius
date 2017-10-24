@@ -51,8 +51,28 @@ public class UserDaoImpl implements UserDao{
 	/**
 	 * 修改用户
 	 * */
-	@Override
-	public void updateUser(User user) {
+	@SuppressWarnings("unchecked")
+    @Override
+	public void updateUser(Long uesrId,String username, String email, Integer tel,
+            Integer userStatus, Integer userStatus1) {
+	    
+	    List<User> list = (List<User>) baseDao.getHibernateTemplate().find("from User u where u.uesrId = ?", uesrId);
+	    if(userStatus==3){
+	        userStatus =25;
+	    } else if(userStatus == 2) {
+	        userStatus = 50;
+	    }else if(userStatus == 1) {
+	        userStatus = 75;
+	    }else {
+	        userStatus =100;
+	    }
+	    User user = list.get(0);
+	    System.out.println(user.toString());
+	    user.setUserName(username);
+	    user.setEmail(email);
+	    user.setPassword(String.valueOf(tel));
+	    user.setCreditworthiness(userStatus);
+	    user.setStatus(userStatus1);
 		baseDao.getHibernateTemplate().update(user);
 	}
 
@@ -96,4 +116,11 @@ public class UserDaoImpl implements UserDao{
 	public List<UserGroup> getAllUserGroup() {
 		return (List<UserGroup>)baseDao.getHibernateTemplate().find("from UserGroup");
 	}
+    /**
+     * 更新
+     */
+    @Override
+    public void updateUser(User user) {
+        baseDao.getHibernateTemplate().update(user);
+    }
 }

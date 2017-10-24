@@ -145,7 +145,7 @@
 				'<a rel="tooltip" title="Like" class="table-action like" href="javascript:void(0)" title="Like">',
 				'<i class="fa fa-heart"></i>',
 				'</a>',
-				'<a rel="tooltip" title="Edit" class="table-action edit" href="javascript:void(0)" title="Edit">',
+				'<a rel="tooltip" title="Edit" class="table-action edit" href="${pageContext.request.contextPath }/adminAction_modifyUser?index='+index+'" title="Edit">',
 				'<i class="fa fa-edit"></i>',
 				'</a>',
 				'<a rel="tooltip" title="Remove" class="table-action remove" href="${pageContext.request.contextPath }/adminAction_deleteUser?index='+index+'" title="Remove">',
