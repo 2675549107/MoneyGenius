@@ -17,10 +17,17 @@ public interface GoodDao {
 	public GoodGroup getGoodsGroupByGroupId(int id);
 	
 	public void investment(UserAndGood uag);
+<<<<<<< HEAD
 
     public void delete(Integer index);
 
     public void updateGood(Long uesrId, String username, String email,
             Integer tel, Integer userStatus, Integer userStatus1,
             String description);
+=======
+	
+	public List<GoodGroup> getAllGoodGroup();
+	
+	public void sell(Good good);
+>>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
 }

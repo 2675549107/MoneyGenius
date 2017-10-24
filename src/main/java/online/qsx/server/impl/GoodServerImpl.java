@@ -57,6 +57,16 @@ public class GoodServerImpl implements GoodServer{
 		goodDao.investment(uag);
 	}
 	
+	@Override
+	public void Sell(Good good) {
+		goodDao.sell(good);
+	}
+	
+	@Override
+	public List<GoodGroup> getAllGoodGroup() {
+		return goodDao.getAllGoodGroup();
+	}
+	
 	//setter and getter
 	public GoodDao getGoodDao() {
 		return goodDao;

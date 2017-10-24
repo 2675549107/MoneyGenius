@@ -40,11 +40,21 @@ public class HomeAction {
 	
 	private List<UserGroup> userGroupList;
 	
+<<<<<<< HEAD
 	private List<Good> goods; 
 
 	private List<User> userList;
 	private Good good;
 	
+=======
+
+	private Good good;
+	
+	private List<Good> goods; 
+
+	private List<User> userList;
+
+>>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
 	/**
 	 * 前台入口
 	 * */
@@ -165,6 +175,27 @@ public class HomeAction {
 		return "goodDetails";
 	}
 	
+	/**
+	 * 打开融资
+	 * */
+	public String openBailout() {
+		return "openBailout";
+	}
+	
+	/**
+	 * 打开AboutUs
+	 * */
+	public String openAboutUs() {
+		return "openAboutUs";
+	}
+	
+	/**
+	 * 打开新手指南
+	 * */
+	public String openBeginnersGuide() {
+		return "openBeginnersGuide";
+	}
+	
 	//getter and setter
 	public UserServer getUserServer() {
 		return userServer;
@@ -237,7 +268,10 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
 
 	public Good getGood() {
 		return good;
