@@ -117,4 +117,12 @@ public class Good {
 	public void setUgs(Set<UserAndGood> ugs) {
 		this.ugs = ugs;
 	}
+
+    @Override
+    public String toString() {
+        return "Good [goodId=" + goodId + ", goodName=" + goodName
+                + ", description=" + description + ", price=" + price
+                + ", goodNum=" + goodNum + ", status=" + status
+                + ", goodGroupId=" + goodGroupId + "]";
+    }
 }

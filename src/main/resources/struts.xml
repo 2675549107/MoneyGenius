@@ -45,6 +45,9 @@
         	<result name="deleteUser">admin/zwtp_2_gi/index.jsp</result>
         	<result name="modifyUser">admin/zwtp_2_gi/miderfyUser.jsp</result>
         	<result name="openS">/WEB-INF/jsp/admin/search.jsp</result>
+        	<result name="allGood">admin/zwtp_2_gi/good.jsp</result>
+        	<result name="deleteGood">admin/zwtp_2_gi/good.jsp</result>
+        	<result name="modifyGood">admin/zwtp_2_gi/miderfyGood.jsp</result>
         </action>
     </package>
 </struts>

@@ -65,4 +65,15 @@ public class GoodServerImpl implements GoodServer{
 	public void setGoodDao(GoodDao goodDao) {
 		this.goodDao = goodDao;
 	}
+    //删除产品
+    @Override
+    public void delete(Integer index) {
+        goodDao.delete(index);
+    }
+    //更新产品列表
+    @Override
+    public void updateGood(Long uesrId, String username, String email, Integer tel,
+            Integer userStatus, Integer userStatus1, String description) {
+        goodDao.updateGood(uesrId,  username, email,  tel, userStatus,userStatus1, description);
+    }
 }

@@ -40,18 +40,11 @@ public class HomeAction {
 	
 	private List<UserGroup> userGroupList;
 	
-<<<<<<< HEAD
 	private List<Good> goods; 
 
 	private List<User> userList;
-=======
 	private Good good;
 	
-	private List<Good> goods; 
-
-	private List<User> userList;
-
->>>>>>> b435590e132519a8676ea0e7e2a635f5a0c3424b
 	/**
 	 * 前台入口
 	 * */
@@ -244,8 +237,7 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
-<<<<<<< HEAD
-=======
+
 
 	public Good getGood() {
 		return good;
@@ -254,5 +246,4 @@ public class HomeAction {
 	public void setGood(Good good) {
 		this.good = good;
 	}
->>>>>>> b435590e132519a8676ea0e7e2a635f5a0c3424b
 }

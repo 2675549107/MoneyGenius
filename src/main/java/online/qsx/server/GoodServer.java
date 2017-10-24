@@ -16,4 +16,9 @@ public interface GoodServer {
 	public GoodGroup getGoodsGroupByGroupId(int id);
 	
 	public void investment(Long userId, Integer goodId, Integer goodNum);
+
+    public void delete(Integer integer);
+
+    public void updateGood(Long uesrId, String username, String email, Integer tel,
+            Integer userStatus, Integer userStatus1, String description);
 }

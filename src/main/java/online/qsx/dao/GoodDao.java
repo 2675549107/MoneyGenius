@@ -17,4 +17,10 @@ public interface GoodDao {
 	public GoodGroup getGoodsGroupByGroupId(int id);
 	
 	public void investment(UserAndGood uag);
+
+    public void delete(Integer index);
+
+    public void updateGood(Long uesrId, String username, String email,
+            Integer tel, Integer userStatus, Integer userStatus1,
+            String description);
 }

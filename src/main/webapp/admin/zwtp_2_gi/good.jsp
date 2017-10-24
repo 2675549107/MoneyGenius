@@ -13,15 +13,14 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.ico">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-<title>用户界面</title>
+<title>Fresh Bootstrap Table by Creative Tim</title>
 
 <meta
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     name="viewport" />
 
 <link href="admin/zwtp_2_gi/assets/css/bootstrap.css" rel="stylesheet" />
-<link href="admin/zwtp_2_gi/assets/css/fresh-bootstrap-table.css"
-    rel="stylesheet" />
+<link href="admin/zwtp_2_gi/assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
 
 <!--     Fonts and icons     -->
 <link href="admin/zwtp_2_gi/assets/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -32,45 +31,48 @@
 <body>
     <div class="wrapper">
         <div class="fresh-table full-color-mycolor full-screen-table">
+            <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange                  
+            Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
+    -->
+
             <div class="toolbar">
 
-                <button id="alertBtn" class="btn btn-default">警告</button>
+                <button id="alertBtn" class="btn btn-default">Alert</button>
             </div>
-            <table id="fresh-table" class="table">
-                <thead>
-                    <th data-field="id">编号</th>
-                    <th data-field="name" data-sortable="true">姓名</th>
-                    <th data-field="salary" data-sortable="true">信誉度</th>
-                    <th data-field="country" data-sortable="true">邮箱</th>
-                    <th data-field="city">电话</th>
-                    <th data-field="status">状态</th>
-                    <th data-field="actions"
-                        data-formatter="operateFormatter"
-                        data-events="operateEvents">操作</th>
-                </thead>
-                <tbody>
-                    <c:forEach items="${userList}" var="user">
-                        <tr>
-                            <td>${user.uesrId}</td>
-                            <td>${user.userName}</td>
-                            <td>${user.creditworthiness}</td>
-                            <td>${user.email}</td>
-                            <td>${user.phone}</td>
-                            <td>${user.status}</td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
+                <table id="fresh-table" class="table">
+                    <thead>
+                        <th data-field="id">编号</th>
+                        <th data-field="name" data-sortable="true">描述</th>
+                        <th data-field="salary" data-sortable="true">名称</th>
+                        <th data-field="country" data-sortable="true">价格（&#36;）</th>
+                        <th data-field="city">数量</th>
+                        <th data-field="status">状态</th>
+                        <th data-field="actions"
+                            data-formatter="operateFormatter"
+                            data-events="operateEvents">操作</th>
+                    </thead>
+                    <tbody>
+                            <c:forEach items="${goodList}" var="good">
+                            <tr>
+                                <td>${good.goodId}</td>
+                                <td>${good.description}</td>
+                                <td>${good.goodName}</td>
+                                <td>${good.price}</td>
+                                <td>&emsp;${good.goodNum}</td>
+                                <td>&emsp;${good.status}</td>
+                                </tr>
+                            </c:forEach>
+                    </tbody>
+                </table>
         </div>
+
     </div>
 
+
 </body>
-<script type="text/javascript"
-    src="admin/zwtp_2_gi/assets/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript"
-    src="admin/zwtp_2_gi/assets/js/bootstrap.js"></script>
-<script type="text/javascript"
-    src="admin/zwtp_2_gi/assets/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="admin/zwtp_2_gi/assets/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="admin/zwtp_2_gi/assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="admin/zwtp_2_gi/assets/js/bootstrap-table.js"></script>
 
 <script type="text/javascript">
 	var $table = $('#fresh-table'), $alertBtn = $('#alertBtn'), full_screen = false, window_height;
@@ -141,12 +143,10 @@
 				'<a rel="tooltip" title="Like" class="table-action like" href="javascript:void(0)" title="Like">',
 				'<i class="fa fa-heart"></i>',
 				'</a>',
-				'<a rel="tooltip" title="Edit" class="table-action edit" href="${pageContext.request.contextPath }/adminAction_modifyUser?index='
-						+ index + '" title="Edit">',
+				'<a rel="tooltip" title="Edit" class="table-action edit" href="${pageContext.request.contextPath }/adminAction_modifyGood?index='+index+'" title="Edit">',
 				'<i class="fa fa-edit"></i>',
 				'</a>',
-				'<a rel="tooltip" title="Remove" class="table-action remove" href="${pageContext.request.contextPath }/adminAction_deleteUser?index='
-						+ index + '" title="Remove">',
+				'<a rel="tooltip" title="Remove" class="table-action remove" href="${pageContext.request.contextPath }/adminAction_deleteGood?index='+index+'" title="Remove">',
 				'<i class="fa fa-remove"></i>', '</a>' ].join('');
 	}
 </script>
