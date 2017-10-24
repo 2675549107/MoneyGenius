@@ -59,6 +59,8 @@
 	<div class="register">
         <form class="form" action="${pageContext.request.contextPath }/homeAction_login" method="post">
             <h2 class="h2">登录</h2>
+            <h3><span style="display: inline; color:red;font-weight: bold;opacity: ${sequestered==null?0:sequestered};">您的账号已被查封，详细请联系管理员</span></h3>
+            <%session.setAttribute("sequestered", 0); %>
             <input name="user.email" type="text" id="name" class="name" placeholder="用户名" required autofocus>  <span style="display: inline; color:red;font-weight: bold;opacity: ${noUser==null?0:noUser};">用户名不存在！</span>
             <%session.setAttribute("noUser", 0); %>
             <input name="user.password" type="password" id="password" class="password" placeholder="密码" required> <span style="display: inline; color:red;font-weight: bold;opacity: ${noPassword==null?0:noPassword};">密码错误！</span>

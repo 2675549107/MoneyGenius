@@ -21,7 +21,7 @@
     <link href="assets/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link href="images/mycjj/style1.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath }/images/mycjj/style1.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body style="margin: 0;">
@@ -64,18 +64,21 @@
         </ul>
     </div>
     <div class="center">
-        <div><img src="admin/zwtp_2_gi/images/img01.png" /></div>
-        <h2>产品名称</h2>
-        <p>在此输入文字</p>
-        <h2>产品介绍</h2>
-        <p>购时尚服务设计团队全体员工祝您生意兴隆，旺遍天下！生活愉快！</p>
-        <h2>融资价格</h2>
-        <p>在此输入文字</p>
-        <h2>融资数量</h2>
-        <p>在此输入文字</p>
-        <h2>产品组名</h2>
-        <p>在此输入文字</p>
-        <div><button type="submit">购买</button></div>
+    	<form action="${pageContext.request.contextPath }/userAction_buyGoods" method="post">
+    		<input type="hidden" name="good.goodId" value="${good.goodId }">
+    		<div><img src="admin/zwtp_2_gi/images/img01.png" /></div>
+	        <h2>产品名称</h2>
+	        <p><input name="good.goodName" type="text" value="${good.goodName }" readonly="readonly"></p>
+	        <h2>产品介绍</h2>
+	        <p><textarea style="width: 300px;" name="good.description">${good.description }</textarea></p>
+	        <h2>融资价格</h2>
+	        <p><input name="good.price" type="text" value="${good.price }" readonly="readonly"></p>
+	        <h2>融资数量</h2>
+	        <p><input onclick="subtract()" style="width: 20px;" type="button" value="-"> <input id="num" name="num" type="text" value="0" readonly="readonly"> <input onclick="add()" style="width: 20px;" type="button" value="+">
+	        <h2>产品组名</h2>
+	        <p><input name="goodGroup.goodGroupName" type="text" value="${goodGroup.goodGroupName }" readonly="readonly"></p>
+	        <div><button type="submit" onclick="return check()">购买</button></div>
+    	</form>
     </div>
     <img src="images/mycjj/footer.jpg" style="width: 100%;/*position: absolute*/;top: 2496px;">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
@@ -85,6 +88,30 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		function add() {
+ 			var num = parseInt($("#num").val())+1;
+ 			 $("#num").val(num); 
+		}
+		
+		function subtract() {
+			var num = parseInt($("#num").val())-1;
+			if(num<=0) {
+				num=0;
+			}
+			$("#num").val(num);
+		}
+		
+		function check() {
+			if(parseInt($("#num").val())==0) {
+				alert("请选择购买数量！！")
+				return false;
+			}
+			return true;
+		}
+		
+	</script>
 </body>
 
 </html>
