@@ -12,6 +12,8 @@ import online.qsx.common.BaseDao;
 import online.qsx.dao.GoodDao;
 import online.qsx.model.Good;
 import online.qsx.model.GoodGroup;
+import online.qsx.model.User;
+import online.qsx.model.UserAndGood;
 
 /**
  * @author Dike
@@ -52,4 +54,13 @@ public class GoodDaoImpl implements GoodDao{
 	public GoodGroup getGoodsGroupByGroupId(int id) {
 		return baseDao.getHibernateTemplate().get(GoodGroup.class, id);
 	}
+	
+	/**
+	 * 用户投资
+	 * */
+	@Override
+	public void investment(UserAndGood udg) {
+		baseDao.getHibernateTemplate().save(udg);
+	}
+	
 }

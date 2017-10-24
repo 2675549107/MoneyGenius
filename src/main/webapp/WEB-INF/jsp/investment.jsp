@@ -69,8 +69,8 @@
         	<c:forEach items="${goods }" var="good">
 	        	<li>
 	                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
-	                <h2><a href="${pageContext.request.contextPath }/userAction_goodDetails?good.goodId=${good.goodId}">${good.goodName }</a></h2>
-	                <p><a href="${pageContext.request.contextPath }/userAction_goodDetails?good.goodId=${good.goodId}">详情</a></p>
+	                <h2><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">${good.goodName }</a></h2>
+	                <p><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">详情</a></p>
 	            </li>
         	</c:forEach>
         </ul>

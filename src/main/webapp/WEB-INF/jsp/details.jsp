@@ -65,6 +65,7 @@
     </div>
     <div class="center">
     	<form action="${pageContext.request.contextPath }/userAction_buyGoods" method="post">
+    		<input type="hidden" name="good.goodId" value="${good.goodId }">
     		<div><img src="admin/zwtp_2_gi/images/img01.png" /></div>
 	        <h2>产品名称</h2>
 	        <p><input name="good.goodName" type="text" value="${good.goodName }" readonly="readonly"></p>
@@ -76,7 +77,7 @@
 	        <p><input onclick="subtract()" style="width: 20px;" type="button" value="-"> <input id="num" name="num" type="text" value="0" readonly="readonly"> <input onclick="add()" style="width: 20px;" type="button" value="+">
 	        <h2>产品组名</h2>
 	        <p><input name="goodGroup.goodGroupName" type="text" value="${goodGroup.goodGroupName }" readonly="readonly"></p>
-	        <div><button type="submit">购买</button></div>
+	        <div><button type="submit" onclick="return check()">购买</button></div>
     	</form>
     </div>
     <img src="images/mycjj/footer.jpg" style="width: 100%;/*position: absolute*/;top: 2496px;">
@@ -101,6 +102,15 @@
 			}
 			$("#num").val(num);
 		}
+		
+		function check() {
+			if(parseInt($("#num").val())==0) {
+				alert("请选择购买数量！！")
+				return false;
+			}
+			return true;
+		}
+		
 	</script>
 </body>
 

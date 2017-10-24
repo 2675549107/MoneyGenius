@@ -3,6 +3,9 @@ package online.qsx.action;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,19 +37,12 @@ public class UserAction {
 	private Integer num;
 	
 	/**
-	 *	打开商品详情
-	 * */
-	public String goodDetails() {
-		good = goodServer.getGoodsById(good.getGoodId());
-		goodGroup = goodServer.getGoodsGroupByGroupId(good.getGoodGroupId());
-		return "goodDetails";
-	}
-	
-	/**
 	 * 投资功能（买）
 	 * */
 	public String buyGoods() {
-		System.out.println(num);
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		user = (User)session.getAttribute("currentuser");
+		goodServer.investment(user.getUesrId(), good.getGoodId(), num);
 		return "success";
 	}
 	

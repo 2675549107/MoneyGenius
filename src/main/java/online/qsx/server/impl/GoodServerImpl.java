@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import online.qsx.dao.GoodDao;
+import online.qsx.dao.UserDao;
 import online.qsx.model.Good;
 import online.qsx.model.GoodGroup;
+import online.qsx.model.User;
+import online.qsx.model.UserAndGood;
 import online.qsx.server.GoodServer;
 
 /**
@@ -42,6 +45,16 @@ public class GoodServerImpl implements GoodServer{
 	@Override
 	public GoodGroup getGoodsGroupByGroupId(int id) {
 		return goodDao.getGoodsGroupByGroupId(id);
+	}
+	
+	@Override
+	public void investment(Long userId, Integer goodId, Integer goodNum) {
+		UserAndGood uag = new UserAndGood();
+		uag.setUesrId(userId);
+		uag.setGoodId(goodId);
+		uag.setGoodNum(goodNum);
+		
+		goodDao.investment(uag);
 	}
 	
 	//setter and getter

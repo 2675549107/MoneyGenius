@@ -59,7 +59,7 @@
     </div>
     <div class="success-1">
         <p>购买金额：</p>
-        <a href="#">返回首页</a>
+        <a href="${pageContext.request.contextPath }/homeAction_showGoods">返回首页</a>
     </div>
 
     <!--5. 页脚 -->

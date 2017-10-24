@@ -40,7 +40,8 @@ public class HomeAction {
 	
 	private List<UserGroup> userGroupList;
 	
-
+	private Good good;
+	
 	private List<Good> goods; 
 
 	private List<User> userList;
@@ -122,6 +123,10 @@ public class HomeAction {
 			session.setAttribute("noPassword", 1);
 			return "openLogin";
 		}
+		else if(u.getStatus()==1) {
+			session.setAttribute("sequestered", 1);
+			return "openLogin";
+		}
 		else {
 			userGroup = userServer.getGroupByGroupId(u.getUserGroupId());
 			session.setAttribute("currentuser", u);
@@ -150,6 +155,15 @@ public class HomeAction {
 			goods = goodServer.getGoodsByGroupId(goodGroup.getGoodGroupId());
 		}
 		return "showGoods";
+	}
+	
+	/**
+	 *	打开商品详情
+	 * */
+	public String goodDetails() {
+		good = goodServer.getGoodsById(good.getGoodId());
+		goodGroup = goodServer.getGoodsGroupByGroupId(good.getGoodGroupId());
+		return "goodDetails";
 	}
 	
 	//getter and setter
@@ -200,10 +214,7 @@ public class HomeAction {
     public void setUserList(List<User> userList) {
         this.userList = userList;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> f500c1615dad73349137dd48ff953f3d5df163a9
+    
 	public GoodGroup getGoodGroup() {
 		return goodGroup;
 	}
@@ -211,12 +222,6 @@ public class HomeAction {
 	public void setGoodGroup(GoodGroup goodGroup) {
 		this.goodGroup = goodGroup;
 	}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f500c1615dad73349137dd48ff953f3d5df163a9
 
 	public GoodServer getGoodServer() {
 		return goodServer;
@@ -233,11 +238,12 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c490b79251e5119ce415da286d111ebb579fffff
->>>>>>> 89ebc5b20f2e81fd74a8b2562f7a875b232d9351
->>>>>>> f5f9965c4a41824a809aaf4289597e325a8f9e68
->>>>>>> f500c1615dad73349137dd48ff953f3d5df163a9
+
+	public Good getGood() {
+		return good;
+	}
+
+	public void setGood(Good good) {
+		this.good = good;
+	}
 }
