@@ -27,4 +27,6 @@ public interface GoodDao {
 	public List<GoodGroup> getAllGoodGroup();
 	
 	public void sell(Good good);
+	
+	public List<UserAndGood> getMyFund(long userId);
 }

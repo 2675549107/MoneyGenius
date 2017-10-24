@@ -50,6 +50,7 @@
     		<!-- 我的信息设置 -->
     		<result name="openModifyMy">/WEB-INF/jsp/user_setting.jsp</result>
     		<result name="midifyMy">/WEB-INF/jsp/members.jsp</result>
+    		<result name="openfund">/WEB-INF/jsp/user_fund.jsp</result>
         </action>
         
         <action name="adminAction_*" class="adminAction" method="{1}">

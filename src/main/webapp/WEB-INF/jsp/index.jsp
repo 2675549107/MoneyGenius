@@ -55,7 +55,6 @@
     </div>
     <!-- 2. 首页导航 -->
     <div class="header">
-<<<<<<< HEAD
         <div class="header_resize">
             <div class="logo">
                 <h1>
@@ -77,23 +76,9 @@
                         href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
                     <li><a
                         href="${pageContext.request.contextPath }/homeAction_openAboutUs">关于我们</a></li>
-                    <li><a href="members.html">我的账户</a></li>
+                    <li><a href="${pageContext.request.contextPath }/userAction_openMembers">我的账户</a></li>
                 </ul>
             </div>
-=======
-         <div class="header_resize">
-            <div class="logo"><h1><a href="index.html"><img src="images/mycjj/logo.png" style="width: 231px;height: 78px;"></a> <small style="color: red;background-color: white">让你的钱聪明起来</small></h1></div>
-                <div class="menu_nav">
-                    <ul>
-                         <li class="active"><a href="javascript:return false;">首页</a></li>
-                         <li><a href="${pageContext.request.contextPath }/homeAction_showGoods">我要投资</a></li>
-                         <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
-                         <li><a href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
-                         <li><a href="${pageContext.request.contextPath }/homeAction_openAboutUs">关于我们</a></li>
-                         <li><a href="${pageContext.request.contextPath }/userAction_openMembers">我的账户</a></li>
-                    </ul>
-                </div>
->>>>>>> 57259c3ff867146bdd2fd3bf53f61ae9ebcaf8a5
             <div class="clr"></div>
         </div>
     </div>

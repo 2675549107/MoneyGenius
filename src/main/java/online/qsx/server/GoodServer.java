@@ -5,6 +5,7 @@ import java.util.List;
 import online.qsx.model.Good;
 import online.qsx.model.GoodGroup;
 import online.qsx.model.User;
+import online.qsx.model.UserAndGood;
 
 public interface GoodServer {
 	public List<Good> getAllGoods();
@@ -15,7 +16,7 @@ public interface GoodServer {
 	
 	public GoodGroup getGoodsGroupByGroupId(int id);
 	
-	public void investment(Long userId, Integer goodId, Integer goodNum);
+	public void investment(Long userId, Integer goodId, Integer goodNum, Double totalMoney);
 
 
     public void delete(Integer integer);
@@ -27,8 +28,6 @@ public interface GoodServer {
 	public List<GoodGroup> getAllGoodGroup();
 	
 	public void Sell(Good good);
-<<<<<<< HEAD
-=======
-
->>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
+	
+	public List<UserAndGood> getMyFund(long userId);
 }

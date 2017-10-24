@@ -1,5 +1,6 @@
 package online.qsx.action;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -13,6 +14,7 @@ import online.qsx.dao.GoodDao;
 import online.qsx.model.Good;
 import online.qsx.model.GoodGroup;
 import online.qsx.model.User;
+import online.qsx.model.UserAndGood;
 import online.qsx.model.UserGroup;
 import online.qsx.server.GoodServer;
 import online.qsx.server.UserServer;
@@ -36,6 +38,10 @@ public class UserAction {
 	
 	private List<GoodGroup> goodGroupList;
 	
+	private List<UserAndGood> uags;
+	
+	private List<Good> goods = new ArrayList<Good>();
+	
 	/**购买的数量*/
 	private Integer num;
 	
@@ -45,7 +51,7 @@ public class UserAction {
 	public String buyGoods() {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		user = (User)session.getAttribute("currentuser");
-		goodServer.investment(user.getUesrId(), good.getGoodId(), num);
+		goodServer.investment(user.getUesrId(), good.getGoodId(), num, num*good.getPrice());
 		return "success";
 	}
 	
@@ -61,8 +67,7 @@ public class UserAction {
 	 * 融资功能（卖）
 	 * */
 	public String Sell() {
-		System.out.println(good.getGoodGroupId());
-		good.setStatus(1);
+		good.setStatus(0);
 		goodServer.Sell(good);
 		return "success";
 	}
@@ -86,6 +91,16 @@ public class UserAction {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		session.setAttribute("currentuser", user);
 		return "midifyMy";
+	}
+	
+	public String openfund() {
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		user = (User)session.getAttribute("currentuser");
+		uags = goodServer.getMyFund(user.getUesrId());
+		for(int i=0 ; i<uags.size(); i++) {
+			goods.add(goodServer.getGoodsById(uags.get(i).getGoodId()));
+		}
+		return "openfund";
 	}
 	
 	//getter and setter
@@ -159,5 +174,21 @@ public class UserAction {
 
 	public void setGoodGroupList(List<GoodGroup> goodGroupList) {
 		this.goodGroupList = goodGroupList;
+	}
+
+	public List<UserAndGood> getUags() {
+		return uags;
+	}
+
+	public void setUags(List<UserAndGood> uags) {
+		this.uags = uags;
+	}
+
+	public List<Good> getGoods() {
+		return goods;
+	}
+
+	public void setGoods(List<Good> goods) {
+		this.goods = goods;
 	}
 }

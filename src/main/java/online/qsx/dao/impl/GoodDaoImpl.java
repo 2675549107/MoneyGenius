@@ -29,7 +29,7 @@ public class GoodDaoImpl implements GoodDao{
 	 * */
 	@Override
 	public List<Good> getAllGoods() {
-		return 	(List<Good>)baseDao.getHibernateTemplate().find("from Good");
+		return 	(List<Good>)baseDao.getHibernateTemplate().find("from Good where status = 0");
 	}
 
 	/**
@@ -37,7 +37,7 @@ public class GoodDaoImpl implements GoodDao{
 	 * */
 	@Override
 	public List<Good> getGoodsByGroupId(int id) {
-		return (List<Good>)baseDao.getHibernateTemplate().find("from Good where goodGroupId = ?", id);
+		return (List<Good>)baseDao.getHibernateTemplate().find("from Good where goodGroupId = ? and status = 0", id);
 	}
 
 	/**
@@ -63,11 +63,7 @@ public class GoodDaoImpl implements GoodDao{
 	public void investment(UserAndGood udg) {
 		baseDao.getHibernateTemplate().save(udg);
 	}
-<<<<<<< HEAD
-
-=======
 	
->>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
 	//删除产品
     @Override
     public void delete(Integer index) {
@@ -93,10 +89,6 @@ public class GoodDaoImpl implements GoodDao{
         baseDao.getHibernateTemplate().update(good);
     }
     
-<<<<<<< HEAD
-
-=======
->>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
 
 	/**
 	 * 得到所有商品类 
@@ -113,8 +105,12 @@ public class GoodDaoImpl implements GoodDao{
 	public void sell(Good good) {
 		baseDao.getHibernateTemplate().save(good);
 	}
-<<<<<<< HEAD
-=======
-	
->>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
+
+	/**
+	 * 得到一个用户的所有购买记录
+	 * */
+	@Override
+	public List<UserAndGood> getMyFund(long userId) {
+		return (List<UserAndGood>)baseDao.getHibernateTemplate().find("from UserAndGood where uesrId = ?", userId);
+	}
 }

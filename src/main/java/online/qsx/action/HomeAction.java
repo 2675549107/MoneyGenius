@@ -129,13 +129,10 @@ public class HomeAction {
 		else {
 			userGroup = userServer.getGroupByGroupId(u.getUserGroupId());
 			session.setAttribute("currentuser", u);
-			System.out.println(userGroup.getUserGroupName());
 			if(userGroup.getUserGroupName().equals("系统管理员")) {
-				System.out.println("4444444");
 				return "adminHome";
 			}
 			else if (userGroup.getUserGroupName().equals("注册会员")) {
-				System.out.println("5555555");
 				return "home";
 			}
 		}
@@ -258,10 +255,6 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
 
 	public Good getGood() {
 		return good;

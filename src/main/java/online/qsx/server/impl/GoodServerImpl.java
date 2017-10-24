@@ -48,11 +48,12 @@ public class GoodServerImpl implements GoodServer{
 	}
 	
 	@Override
-	public void investment(Long userId, Integer goodId, Integer goodNum) {
+	public void investment(Long userId, Integer goodId, Integer goodNum, Double totalMoney) {
 		UserAndGood uag = new UserAndGood();
 		uag.setUesrId(userId);
 		uag.setGoodId(goodId);
 		uag.setGoodNum(goodNum);
+		uag.setTotalMoney(totalMoney);
 		
 		goodDao.investment(uag);
 	}
@@ -86,4 +87,10 @@ public class GoodServerImpl implements GoodServer{
             Integer userStatus, Integer userStatus1, String description) {
         goodDao.updateGood(uesrId,  username, email,  tel, userStatus,userStatus1, description);
     }
+
+    //得到用户的投资产品
+	@Override
+	public List<UserAndGood> getMyFund(long userId) {
+		return goodDao.getMyFund(userId);
+	}
 }

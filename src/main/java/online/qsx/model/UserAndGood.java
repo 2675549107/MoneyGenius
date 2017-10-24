@@ -24,6 +24,9 @@ public class UserAndGood {
 	@Column(name = "good_num")
 	private Integer goodNum;
 	
+	@Column(name = "total_money")
+	private Double totalMoney;
+	
 	//setter and getter
 	public Integer getUgId() {
 		return ugId;
@@ -55,5 +58,13 @@ public class UserAndGood {
 
 	public void setGoodNum(Integer goodNum) {
 		this.goodNum = goodNum;
+	}
+
+	public Double getTotalMoney() {
+		return totalMoney;
+	}
+
+	public void setTotalMoney(Double totalMoney) {
+		this.totalMoney = totalMoney;
 	}
 }

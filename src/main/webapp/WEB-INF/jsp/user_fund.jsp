@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,76 +36,13 @@
             <th>金额</th>
             <th class="textLeftColumn">项目</th>
         </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
-        <tr>
-            <td>张三</td>
-            <td>¥9999.88</td>
-            <td class="textLeftColumn">泛娱乐X计划项目</td>
-        </tr>
+        <c:forEach items="${goods }" var="good" varStatus="status">
+        	<tr>
+            	<td>${currentuser.userName }</td>
+            	<td>¥${uags.get(status.index).totalMoney }</td>
+            	<td class="textLeftColumn">${good.goodName }</td>
+        	</tr>
+        </c:forEach>
     </table>
 
     <table class="tab_btn_list">

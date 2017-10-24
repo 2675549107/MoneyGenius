@@ -21,10 +21,8 @@ public class VerificationInterceptor extends AbstractInterceptor{
         Map session = invocation.getInvocationContext().getSession();
         User user = (User) session.get("currentuser");
         if (null != user) {
-            System.out.println("拦截器：合法用户登录---");
             return invocation.invoke();
         } else {
-            System.out.println("拦截器：用户未登录---");
             return Action.LOGIN;
         }
 	}

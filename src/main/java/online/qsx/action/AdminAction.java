@@ -118,7 +118,6 @@ public class AdminAction {
 	}
 	//提交修改产品信息
 	public String updateModifyGood() {
-	    System.out.println(uesrId);
 	    goodServer.updateGood(uesrId,username,email,tel,userStatus,userStatus1,description);
 	    goodList = goodServer.getAllGoods();
 	    return "allGood";

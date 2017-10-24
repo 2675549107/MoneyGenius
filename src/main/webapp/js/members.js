@@ -46,7 +46,7 @@ $(function () {
                 i = 1;
                 break;
             default :
-                pathn = "user_fund.html";
+                pathn = "userAction_openfund";
                 i = 0;
                 break;
         }
