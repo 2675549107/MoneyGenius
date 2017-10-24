@@ -35,7 +35,7 @@
                 <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
                 <li><a href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
                 <li class="active"><a href="javascript:return false;">关于我们</a></li>
-                <li><a href="members.html">我的账户</a></li>
+                <li><a href="${pageContext.request.contextPath }/userAction_openMembers">我的账户</a></li>
             </ul>
         </div>
         <div class="clr"></div>

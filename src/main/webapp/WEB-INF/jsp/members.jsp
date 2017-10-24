@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -46,12 +48,12 @@
         </div>
         <div class="menu_nav">
             <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="investment.html">我要投资</a></li>
-                <li><a href="bailout.html">我要融资</a></li>
-                <li><a href="BeginnersGuide.html">新手指南</a></li>
-                <li><a href="Aboutus.html">关于我们</a></li>
-                <li class="active"><a href="members.html">我的账户</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_home">首页</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_showGoods">我要投资</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_openAboutUs">关于我们</a></li>
+                <li class="active"><a href="javascript:return false;">我的账户</a></li>
             </ul>
         </div>
         <div class="clr"></div>
@@ -65,15 +67,15 @@
         <table class="tab_user_info">
             <tr>
                 <td class="firstRow">账&nbsp&nbsp&nbsp&nbsp户:</td>
-                <td>wjl1075207820</td>
+                <td>${currentuser.userName }</td>
             </tr>
             <tr>
                 <td class="firstRow">邮&nbsp&nbsp&nbsp&nbsp箱:</td>
-                <td>1000000000@qq.com</td>
+                <td>${currentuser.email }</td>
             </tr>
             <tr>
                 <td class="firstRow">手机号:</td>
-                <td>13366666666</td>
+                <td>${currentuser.phone }</td>
             </tr>
         </table>
     </div>

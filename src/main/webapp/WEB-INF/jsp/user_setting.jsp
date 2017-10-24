@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,34 +29,31 @@
 <div id="div_article-bg-right" class="div_content">
     <h3>账户设置</h3>
     <hr>
-    <form>
+    <form action="${pageContext.request.contextPath }/userAction_midifyMy" method="post">
         <table class="info_list">
             <tr>
                 <td colspan="2" style="height: 45px;color: red"></td>
             </tr>
+            <input type="hidden" name="user.uesrId" value="${currentuser.uesrId }">
             <tr>
                 <td><label for="userName">用户名</label></td>
-                <td><input id="userName" type="text" class="inputs"></td>
-            </tr>
-            <tr>
-                <td><label for="name">真实姓名</label></td>
-                <td><input id="name" type="text" class="inputs"></td>
+                <td><input id="userName" name="user.userName" type="text" class="inputs" value="${currentuser.userName }"></td>
             </tr>
             <tr>
                 <td><label for="phone">手机号</label></td>
-                <td><input id="phone" type="text" class="inputs"></td>
+                <td><input id="phone" name="user.phone" type="text" class="inputs" value="${currentuser.phone }"></td>
             </tr>
             <tr>
                 <td><label for="eMail">电子邮箱</label></td>
-                <td><input id="eMail" type="email" class="inputs"></td>
+                <td><input id="eMail" name="user.email" type="email" class="inputs" value="${currentuser.email }"></td>
             </tr>
             <tr>
                 <td><label for="password">登录密码</label></td>
-                <td><input id="password" type="text" class="inputs"></td>
+                <td><input id="password" name="user.password" type="text" class="inputs" value="${currentuser.password }"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn" value="取消"></td>
-                <td><input type="button" class="btn"  value="保存"></td>
+                <td><input type="reset" class="btn" value="取消"></td>
+                <td><input type="submit" class="btn"  value="保存"></td>
             </tr>
         </table>
     </form>

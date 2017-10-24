@@ -5,7 +5,6 @@
     color: #333;
 }
 
-
 article {
     position: relative;
     margin: 0 auto;
@@ -49,7 +48,6 @@ footer {
     width: 898px;
     border-left: #e0e0e0 solid 1px;
 }
-
 
 .img_portrait {
     width: 80px;
@@ -179,9 +177,11 @@ footer {
     width: 80px;
     margin-right: 0;
 }
+
 .tab_btn_list button {
     width: 80px;
 }
+
 .tab_btn_list button,
 .tab_btn_list span {
     margin-top: 10px;
@@ -190,6 +190,7 @@ footer {
 .tab_btn_list button:hover {
     background: #ff5e74;
 }
+
 .tab_account-detail-list td.thirdColumn {
     width: 400px;
     text-indent: 32px;
@@ -205,3 +206,32 @@ footer {
     background: #ff5e74;
 }
 
+.info_list {
+    width: 500px;
+}
+
+/*.info_list td  {*/
+/*line-height: 30px;*/
+/*text-align: center;*/
+/*}*/
+
+.info_list td,
+.info_list input {
+    line-height: 45px;
+    width: 250px;
+}
+
+.info_list input {
+    padding-left: 30px;
+}
+.info_list td {
+    text-align: center;
+}
+
+.info_list input.btn {
+    line-height: 30px;
+}
+
+.inputs {
+    height: 30px;
+}
