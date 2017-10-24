@@ -82,7 +82,6 @@ public class UserAction {
 	}
 	
 	public String midifyMy() {
-		System.out.println("jin le");
 		userServer.updateUser(user);
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		session.setAttribute("currentuser", user);

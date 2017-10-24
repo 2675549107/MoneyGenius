@@ -35,6 +35,8 @@
                 <td colspan="2" style="height: 45px;color: red"></td>
             </tr>
             <input type="hidden" name="user.uesrId" value="${currentuser.uesrId }">
+            <input type="hidden" name="user.status" value="${currentuser.status }">
+            <input type="hidden" name="user.userGroupId" value="${currentuser.userGroupId }">
             <tr>
                 <td><label for="userName">用户名</label></td>
                 <td><input id="userName" name="user.userName" type="text" class="inputs" value="${currentuser.userName }"></td>

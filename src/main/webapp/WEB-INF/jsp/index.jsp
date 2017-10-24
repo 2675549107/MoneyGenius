@@ -501,7 +501,6 @@
         oImgBox.style.display = 'block';
     }
     </script>
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>  
     <script src="assets/js/bootstrap.min.js"></script>
 <!--     METISMENU SCRIPTS

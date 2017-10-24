@@ -39,22 +39,12 @@ public class HomeAction {
 	private GoodGroup goodGroup;
 	
 	private List<UserGroup> userGroupList;
-	
-<<<<<<< HEAD
+
 	private List<Good> goods; 
 
 	private List<User> userList;
 	private Good good;
 	
-=======
-
-	private Good good;
-	
-	private List<Good> goods; 
-
-	private List<User> userList;
-
->>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
 	/**
 	 * 前台入口
 	 * */
@@ -106,7 +96,7 @@ public class HomeAction {
 	public String register() {
 		user.setUserGroupId(userGroup.getUserGroupId());
 		user.setCreditworthiness(100);
-		user.setStatus(1);
+		user.setStatus(0);
 		userServer.addUser(user);
 		return "backhome";
 	}
@@ -268,10 +258,7 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
 
 	public Good getGood() {
 		return good;
