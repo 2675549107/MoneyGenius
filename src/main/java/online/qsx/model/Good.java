@@ -121,7 +121,7 @@ public class Good {
 		this.ugs = ugs;
 	}
 
-<<<<<<< HEAD
+
     @Override
     public String toString() {
         return "Good [goodId=" + goodId + ", goodName=" + goodName
@@ -129,7 +129,7 @@ public class Good {
                 + ", goodNum=" + goodNum + ", status=" + status
                 + ", goodGroupId=" + goodGroupId + "]";
     }
-=======
+
 	public String getUrl() {
 		return url;
 	}
@@ -137,5 +137,5 @@ public class Good {
 	public void setUrl(String url) {
 		this.url = url;
 	}
->>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
+
 }

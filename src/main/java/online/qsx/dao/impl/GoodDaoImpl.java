@@ -63,7 +63,7 @@ public class GoodDaoImpl implements GoodDao{
 	public void investment(UserAndGood udg) {
 		baseDao.getHibernateTemplate().save(udg);
 	}
-<<<<<<< HEAD
+	
 	//删除产品
     @Override
     public void delete(Integer index) {
@@ -89,7 +89,6 @@ public class GoodDaoImpl implements GoodDao{
         baseDao.getHibernateTemplate().update(good);
     }
     
-=======
 
 	/**
 	 * 得到所有商品类 
@@ -106,5 +105,5 @@ public class GoodDaoImpl implements GoodDao{
 	public void sell(Good good) {
 		baseDao.getHibernateTemplate().save(good);
 	}
->>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
+	
 }
