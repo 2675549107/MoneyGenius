@@ -68,13 +68,26 @@ public class UserAction {
 	}
 	
 	/**
-	 * 查看自己信息
+	 * 进入我的信息
 	 * */
-
+	public String openMembers() {
+		return "openMembers";
+	}
 	
 	/**
 	 * 修改自己信息
 	 * */
+	public String openModifyMy() {
+		return "openModifyMy";
+	}
+	
+	public String midifyMy() {
+		System.out.println("jin le");
+		userServer.updateUser(user);
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		session.setAttribute("currentuser", user);
+		return "midifyMy";
+	}
 	
 	//getter and setter
 	public UserServer getUserServer() {

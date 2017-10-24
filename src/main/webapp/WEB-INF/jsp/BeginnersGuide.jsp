@@ -37,7 +37,7 @@
           <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
           <li class="active"><a href="javascript:return false;">新手指南</a></li>
           <li><a href="${pageContext.request.contextPath }/homeAction_openAboutUs">关于我们</a></li>
-          <li><a href="Members.html">我的账户</a></li>
+          <li><a href="${pageContext.request.contextPath }/userAction_openMembers">我的账户</a></li>
         </ul>
       </div>
       <div class="clr"></div>
@@ -90,7 +90,7 @@
 <h3>担保风险</h3>
 第三方公司存在被依法撤销、破产或发生其它导致无法履行垫付责任的可能，此时第三方公司将无法继续履行垫付责任。此时若融资方不能按时足额偿还本息，投资人将面临无法收回本金和收益的风险。
 </div>
-<div class="font-sub"><span style="background: yellow;" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openRegister';">注册</span></div>
+<div class="font-sub"><span class="sub02" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openRegister';">注册</span></div>
 </div>
 </div>
 

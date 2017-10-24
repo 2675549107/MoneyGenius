@@ -45,6 +45,11 @@
             <interceptor-ref name="authority"/>
         	<result name="success">/WEB-INF/jsp/success.jsp</result>
         	<result name="openSell">/WEB-INF/jsp/financing.jsp</result>
+        	<!-- 打开我的信息 -->
+    		<result name="openMembers">/WEB-INF/jsp/members.jsp</result>
+    		<!-- 我的信息设置 -->
+    		<result name="openModifyMy">/WEB-INF/jsp/user_setting.jsp</result>
+    		<result name="midifyMy">/WEB-INF/jsp/members.jsp</result>
         </action>
         
         <action name="adminAction_*" class="adminAction" method="{1}">
