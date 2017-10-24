@@ -14,6 +14,8 @@ public interface UserDao {
 	
 	public User getUserById(Long id);
 	
+	public void updateUser(Long uesrId,String username, String email, Integer tel,Integer userStatus, Integer userStatus1);
+	
 	public void updateUser(User user);
 	
 	public void deleteUser(User user,Long id);
