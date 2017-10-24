@@ -392,7 +392,7 @@
 
     BootstrapTable.LOCALES['en-US'] = BootstrapTable.LOCALES['en'] = {
         formatLoadingMessage: function () {
-            return 'Loading, please wait...';
+            return '正在加载 , 请稍等...';
         },
         formatRecordsPerPage: function (pageNumber) {
             return sprintf('%s records per page', pageNumber);
@@ -401,22 +401,22 @@
             return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows);
         },
         formatSearch: function () {
-            return 'Search';
+            return '查询';
         },
         formatNoMatches: function () {
-            return 'No matching records found';
+            return '无匹配的结果';
         },
         formatPaginationSwitch: function () {
             return 'Hide/Show pagination';
         },
         formatRefresh: function () {
-            return 'Refresh';
+            return '刷新';
         },
         formatToggle: function () {
-            return 'Toggle';
+            return '实现切换';
         },
         formatColumns: function () {
-            return 'Columns';
+            return '选择列';
         },
         formatAllRows: function () {
             return 'All';

@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import jdk.nashorn.internal.ir.RuntimeNode.Request;
+import online.qsx.model.Good;
 import online.qsx.model.User;
 import online.qsx.model.UserGroup;
+import online.qsx.server.GoodServer;
 import online.qsx.server.UserServer;
 
 /**
@@ -21,9 +23,13 @@ import online.qsx.server.UserServer;
 public class AdminAction {
 	@Autowired
 	private UserServer userServer;
+	@Autowired
+	private GoodServer goodServer;
 	private User user;
+	private Good good;
 	private UserGroup userGroup;
 	private List<User> userList;
+	private List<Good> goodList;
 	private Long index;
 	//更新页面字段
 	private Long uesrId;
@@ -32,6 +38,7 @@ public class AdminAction {
 	private Integer tel;
     private Integer userStatus;
 	private Integer userStatus1;
+	private String description;
 	/**
 	 * 查看所有用户
 	 * */
@@ -51,7 +58,6 @@ public class AdminAction {
 		userList = userServer.getUserByName(user);
 		return "getAllUser";
 	}
-	
 	/**
 	 * 修改用户信息
 	 * */
@@ -93,11 +99,30 @@ public class AdminAction {
 	/**
 	 * 产品审批
 	 * */ 
-	
-	/**
-	 * 产品下架
-	 * */
-	
+	public String getAllGood() {
+	    goodList = goodServer.getAllGoods();
+	    return "allGood";
+	}
+	//删除产品
+	public String deleteGood() {
+	    goodServer.delete(Integer.valueOf(index.toString()));
+	    goodList = goodServer.getAllGoods();
+	    return "deleteGood";
+	}
+	//修改产品
+	public String modifyGood() {
+	    good = goodServer.getGoodsById(Integer.valueOf(index.toString())+1);
+	    userStatus = good.getGoodGroupId();
+	    userStatus1 = good.getStatus();
+	    return "modifyGood";
+	}
+	//提交修改产品信息
+	public String updateModifyGood() {
+	    System.out.println(uesrId);
+	    goodServer.updateGood(uesrId,username,email,tel,userStatus,userStatus1,description);
+	    goodList = goodServer.getAllGoods();
+	    return "allGood";
+	}
 	//getter and setter
 	public UserServer getUserServer() {
 		return userServer;
@@ -177,6 +202,30 @@ public class AdminAction {
 
     public void setUesrId(Long uesrId) {
         this.uesrId = uesrId;
+    }
+
+    public Good getGood() {
+        return good;
+    }
+
+    public void setGood(Good good) {
+        this.good = good;
+    }
+
+    public List<Good> getGoodList() {
+        return goodList;
+    }
+
+    public void setGoodList(List<Good> goodList) {
+        this.goodList = goodList;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

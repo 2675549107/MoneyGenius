@@ -29,7 +29,7 @@
 </head>
 
 <body style="background:#f0f9fd;">
-    <div class="lefttop"><span></span>通讯录</div>
+    <div class="lefttop"><span></span>管理权限</div>
     <dl class="leftmenu">
         <dd>
             <div class="title">
@@ -45,7 +45,7 @@
             </div>
             <ul class="menuson">
                 <li>
-                    <cite></cite><a href="index1.html" target="rightFrame">产品审批</a><i></i>
+                    <cite></cite><a href="<%=request.getContextPath() %>/adminAction_getAllGood" target="rightFrame">产品审批</a><i></i>
         </dd>
     </dl>
 </body>

@@ -5,6 +5,7 @@ package online.qsx.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -62,6 +63,33 @@ public class GoodDaoImpl implements GoodDao{
 	public void investment(UserAndGood udg) {
 		baseDao.getHibernateTemplate().save(udg);
 	}
+<<<<<<< HEAD
+	//删除产品
+    @Override
+    public void delete(Integer index) {
+        Good good = baseDao.getHibernateTemplate().get(Good.class, ++index);
+        baseDao.getHibernateTemplate().delete(good);
+       Query query = baseDao.getHibernateTemplate().getSessionFactory().getCurrentSession().createQuery("update Good  set goodId = goodId-1 where goodId > "+index);
+       query.executeUpdate();
+    }
+    //提交更新产品信息
+    @Override
+    public void updateGood(Long uesrId, String username, String email,
+            Integer tel, Integer userStatus, Integer userStatus1,
+            String description) {
+        System.out.println(Integer.valueOf(uesrId.toString()));
+        Good good = baseDao.getHibernateTemplate().get(Good.class, Integer.valueOf(uesrId.toString()));
+        System.out.println(good.toString());
+        good.setGoodName(username);
+        good.setGoodNum(tel);
+        good.setPrice(Double.parseDouble(email));
+        good.setGoodGroupId(userStatus);
+        good.setDescription(description);
+        good.setStatus(userStatus1);
+        baseDao.getHibernateTemplate().update(good);
+    }
+    
+=======
 
 	/**
 	 * 得到所有商品类 
@@ -78,4 +106,5 @@ public class GoodDaoImpl implements GoodDao{
 	public void sell(Good good) {
 		baseDao.getHibernateTemplate().save(good);
 	}
+>>>>>>> fcc7eb9779f7aa475670b22a07066d28248d140c
 }
