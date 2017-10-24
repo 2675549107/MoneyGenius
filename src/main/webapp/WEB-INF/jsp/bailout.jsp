@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -11,7 +10,7 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="images/mycjj/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="images/mycjj/style.css" />
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -22,7 +21,7 @@
     <link href="assets/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link href="images/mycjj/style1.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="images/mycjj/style1.css">
 </head>
 
 <body style="margin: 0;">
@@ -44,8 +43,8 @@
             <div class="menu_nav">
                 <ul>
                     <li><a href="${pageContext.request.contextPath }/homeAction_home">首页</a></li>
-                    <li class="active"><a href="javascript:return false;">我要投资</a></li>
-                    <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_showGoods">我要投资</a></li>
+                    <li class="active"><a href="javascript:return false;">我要融资</a></li>
                     <li><a href="BeginnersGuide.html">新手指南</a></li>
                     <li><a href="Aboutus.html">关于我们</a></li>
                     <li><a href="Members.html">我的账户</a></li>
@@ -55,27 +54,41 @@
         </div>
     </div>
     </nav>
-    <div class="classify">
-        <ul>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=0">全部</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=1">赎楼贷</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=2">宅急贷</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=3">房抵贷</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=4">企易贷</a></li>
-        </ul>
+
+    <div>
+        <img src="images/mycjj/load.png" width="100%">
     </div>
-    <div class="invest">
-        <ul class="imglist">
-        	<c:forEach items="${goods }" var="good">
-	        	<li>
-	                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
-	                <h2><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">${good.goodName }</a></h2>
-	                <p><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">详情</a></p>
-	            </li>
-        	</c:forEach>
-        </ul>
-    </div>
-    <img src="images/mycjj/footer.jpg" style="width: 100%;/*position: absolute*/;top: 2496px;">
+
+    <section id="topnav" class="row text-center placeholders" style="position: absolute;top: 388px;left: 234px">
+        <div class="col-6 col-sm-3 placeholder">
+            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <h4>赎楼贷</h4>
+            <div class="text-muted">还清按揭 助力卖方</div>
+        </div>
+        <div class="col-6 col-sm-3 placeholder">
+            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <h4>宅急贷</h4>
+            <span class="text-muted">房屋置换 未售先贷</span>
+        </div>
+        <div class="col-6 col-sm-3 placeholder">
+            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <h4>房抵贷</h4>
+            <span class="text-muted">房产抵押 贷为急用</span>
+        </div>
+        <div class="col-6 col-sm-3 placeholder">
+            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <h4>企易贷</h4>
+            <span class="text-muted">资金周转 经营无忧</span>
+        </div>
+    </section>
+    <section style="position: absolute;top: 820px;left: 547px">
+      <div class="financ">
+          <a type="submit" href="${pageContext.request.contextPath }/userAction_openSell">我要融资</a>
+       </div>
+    </section>
+    
+    <!--5. 页脚 -->
+    <img src="images/mycjj/footer.jpg" style="width: 100%;position: absolute;top: 902px;">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Optional JavaScript -->
@@ -83,6 +96,13 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#topnav div').click(function() {
+          $(this).addClass("color").siblings().removeClass("color");
+        });
+      });
+    </script>
 </body>
 
 </html>

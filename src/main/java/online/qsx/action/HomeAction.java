@@ -166,6 +166,13 @@ public class HomeAction {
 		return "goodDetails";
 	}
 	
+	/**
+	 * 打开融资
+	 * */
+	public String openBailout() {
+		return "openBailout";
+	}
+	
 	//getter and setter
 	public UserServer getUserServer() {
 		return userServer;

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -11,7 +10,7 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="images/mycjj/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="images/mycjj/style.css" />
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
@@ -22,7 +21,7 @@
     <link href="assets/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link href="images/mycjj/style1.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="images/mycjj/style1.css">
 </head>
 
 <body style="margin: 0;">
@@ -30,8 +29,8 @@
     <div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px">
         <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 93px">客服热线 : 18408248053</span>
         <img src="https://market.wukonglicai.com/pc/spread/images/phone.png" style="float: right;margin-top: 4px;margin-right: 10px;">
-        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openRegister';">免费注册</span>
-        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openLogin';">登录</span>
+        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px"><a href="register.html">免费注册</a></span>
+        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px"><a href="login.html">登录</a></span>
         <img src="http://www.gomemyc.com/global/img/icon1home.png" style="font-size: 16px;float: left;margin-top: 7px;margin-left: 60px">
         <span style="font-size: 12px;float: left;margin-top: 4px;margin-left: 3px;color: black">国美金融</span>
         <div style="font-size: 12px;float: left;margin-top: 4px;margin-left: 5px">(市场有风险，投资需谨慎)</div>
@@ -43,9 +42,9 @@
                 <h1><a href="index.html"><img src="images/mycjj/logo.png" style="width: 231px;height: 78px;"></a> <small style="color: red;background-color: white">让你的钱聪明起来</small></h1></div>
             <div class="menu_nav">
                 <ul>
-                    <li><a href="${pageContext.request.contextPath }/homeAction_home">首页</a></li>
-                    <li class="active"><a href="javascript:return false;">我要投资</a></li>
-                    <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="investment.html">我要投资</a></li>
+                    <li class="active"><a href="bailout.html">我要融资</a></li>
                     <li><a href="BeginnersGuide.html">新手指南</a></li>
                     <li><a href="Aboutus.html">关于我们</a></li>
                     <li><a href="Members.html">我的账户</a></li>
@@ -55,26 +54,32 @@
         </div>
     </div>
     </nav>
-    <div class="classify">
-        <ul>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=0">全部</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=1">赎楼贷</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=2">宅急贷</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=3">房抵贷</a></li>
-            <li><a href="${pageContext.request.contextPath }/homeAction_showGoods?goodGroup.goodGroupId=4">企易贷</a></li>
-        </ul>
+    <div class="equity">
+    	<form action="#" method="post">
+    		<h2>选择头像</h2>
+	        <input type="file" class="product">
+	        <h2>产品名称</h2>
+	        <input type="text" class="product">
+	        <h2>产品介绍</h2>
+	        <textarea class="product"></textarea>
+	        <h2>融资价格</h2>
+	        <input type="text" class="product">
+	        <h2>融资数量</h2>
+	        <input type="text" class="product">
+	        <h2>产品组名</h2>
+	        <select class="product" required="">
+	            <option value="">请选择</option>
+	            <option value="">一组</option>
+	            <option value="">二组</option>
+	            <option value="">三组</option>
+	            <option value="">四组</option>
+	        </select>
+	        <div>
+	            <button type="submit">提交</button>
+	        </div>
+    	</form>
     </div>
-    <div class="invest">
-        <ul class="imglist">
-        	<c:forEach items="${goods }" var="good">
-	        	<li>
-	                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
-	                <h2><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">${good.goodName }</a></h2>
-	                <p><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">详情</a></p>
-	            </li>
-        	</c:forEach>
-        </ul>
-    </div>
+    <!--5. 页脚 -->
     <img src="images/mycjj/footer.jpg" style="width: 100%;/*position: absolute*/;top: 2496px;">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="https://code.jquery.com/jquery.js"></script>

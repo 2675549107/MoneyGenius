@@ -47,6 +47,13 @@ public class UserAction {
 	}
 	
 	/**
+	 * 融资页面
+	 * */
+	public String openSell() {
+		return "openSell";
+	}
+	
+	/**
 	 * 融资功能（卖）
 	 * */
 	

@@ -48,6 +48,9 @@ public class Good {
 	@Column(name = "goodgroup_id")
 	private Integer goodGroupId;
 	
+	@Column()
+	private String url;
+	
 	//用户与产品关系
 	@OneToMany(fetch = FetchType.EAGER,cascade={CascadeType.ALL})
 	@JoinColumn(name="good_id")
@@ -116,5 +119,13 @@ public class Good {
 
 	public void setUgs(Set<UserAndGood> ugs) {
 		this.ugs = ugs;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 }
