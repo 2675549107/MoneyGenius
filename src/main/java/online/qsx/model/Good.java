@@ -137,4 +137,8 @@ public class Good {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
 }

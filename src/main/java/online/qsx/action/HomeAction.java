@@ -258,7 +258,10 @@ public class HomeAction {
 	public void setGoods(List<Good> goods) {
 		this.goods = goods;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
 
 	public Good getGood() {
 		return good;

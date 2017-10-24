@@ -27,4 +27,8 @@ public interface GoodServer {
 	public List<GoodGroup> getAllGoodGroup();
 	
 	public void Sell(Good good);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
 }
