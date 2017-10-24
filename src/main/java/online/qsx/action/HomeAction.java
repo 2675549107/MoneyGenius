@@ -174,6 +174,20 @@ public class HomeAction {
 		return "openBailout";
 	}
 	
+	/**
+	 * 打开AboutUs
+	 * */
+	public String openAboutUs() {
+		return "openAboutUs";
+	}
+	
+	/**
+	 * 打开新手指南
+	 * */
+	public String openBeginnersGuide() {
+		return "openBeginnersGuide";
+	}
+	
 	//getter and setter
 	public UserServer getUserServer() {
 		return userServer;

@@ -62,5 +62,20 @@ public class GoodDaoImpl implements GoodDao{
 	public void investment(UserAndGood udg) {
 		baseDao.getHibernateTemplate().save(udg);
 	}
+
+	/**
+	 * 得到所有商品类 
+	 * */
+	@Override
+	public List<GoodGroup> getAllGoodGroup() {
+		return (List<GoodGroup>)baseDao.getHibernateTemplate().find("from GoodGroup");
+	}
 	
+	/**
+	 * 融资
+	 * */
+	@Override
+	public void sell(Good good) {
+		baseDao.getHibernateTemplate().save(good);
+	}
 }

@@ -33,6 +33,10 @@
     		 <result name="goodDetails">/WEB-INF/jsp/details.jsp</result>
     		 <!-- 跳转融资 -->
     		 <result name="openBailout">/WEB-INF/jsp/bailout.jsp</result>
+    		 <!-- 打开AboutUs -->
+    		 <result name="openAboutUs">/WEB-INF/jsp/Aboutus.jsp</result>
+    		 <!-- 打开新手指南 -->
+    		 <result name="openBeginnersGuide">/WEB-INF/jsp/BeginnersGuide.jsp</result>
     	</action>
     
         <action name="userAction_*" class="userAction" method="{1}">

@@ -16,4 +16,8 @@ public interface GoodServer {
 	public GoodGroup getGoodsGroupByGroupId(int id);
 	
 	public void investment(Long userId, Integer goodId, Integer goodNum);
+	
+	public List<GoodGroup> getAllGoodGroup();
+	
+	public void Sell(Good good);
 }

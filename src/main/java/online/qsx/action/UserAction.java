@@ -9,6 +9,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import online.qsx.dao.GoodDao;
 import online.qsx.model.Good;
 import online.qsx.model.GoodGroup;
 import online.qsx.model.User;
@@ -33,6 +34,8 @@ public class UserAction {
 	
 	private Good good;
 	
+	private List<GoodGroup> goodGroupList;
+	
 	/**购买的数量*/
 	private Integer num;
 	
@@ -50,13 +53,19 @@ public class UserAction {
 	 * 融资页面
 	 * */
 	public String openSell() {
+		goodGroupList = goodServer.getAllGoodGroup();
 		return "openSell";
 	}
 	
 	/**
 	 * 融资功能（卖）
 	 * */
-	
+	public String Sell() {
+		System.out.println(good.getGoodGroupId());
+		good.setStatus(1);
+		goodServer.Sell(good);
+		return "success";
+	}
 	
 	/**
 	 * 查看自己信息
@@ -130,5 +139,13 @@ public class UserAction {
 
 	public void setNum(Integer num) {
 		this.num = num;
+	}
+
+	public List<GoodGroup> getGoodGroupList() {
+		return goodGroupList;
+	}
+
+	public void setGoodGroupList(List<GoodGroup> goodGroupList) {
+		this.goodGroupList = goodGroupList;
 	}
 }

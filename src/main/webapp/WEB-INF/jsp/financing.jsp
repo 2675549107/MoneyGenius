@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -55,24 +56,23 @@
     </div>
     </nav>
     <div class="equity">
-    	<form action="#" method="post">
+    	<form action="${pageContext.request.contextPath }/userAction_Sell" method="post">
     		<h2>选择头像</h2>
-	        <input type="file" class="product">
+	        <input type="file" name="good.url" class="product">
 	        <h2>产品名称</h2>
-	        <input type="text" class="product">
+	        <input type="text" name="good.goodName" class="product">
 	        <h2>产品介绍</h2>
-	        <textarea class="product"></textarea>
+	        <textarea name="good.description" class="product"></textarea>
 	        <h2>融资价格</h2>
-	        <input type="text" class="product">
+	        <input type="text" name="good.price" class="product">
 	        <h2>融资数量</h2>
-	        <input type="text" class="product">
+	        <input type="text" name="good.goodNum" class="product">
 	        <h2>产品组名</h2>
-	        <select class="product" required="">
-	            <option value="">请选择</option>
-	            <option value="">一组</option>
-	            <option value="">二组</option>
-	            <option value="">三组</option>
-	            <option value="">四组</option>
+	        <select class="product" name="good.goodGroupId">
+	            <option value="">---请选择---</option>
+				<c:forEach items="${goodGroupList }" var="goodGroup">
+					<option value="${goodGroup.goodGroupId }">${goodGroup.goodGroupName }</option>
+				</c:forEach>
 	        </select>
 	        <div>
 	            <button type="submit">提交</button>

@@ -46,9 +46,9 @@
                     <li><a href="${pageContext.request.contextPath }/homeAction_home">首页</a></li>
                     <li class="active"><a href="javascript:return false;">我要投资</a></li>
                     <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
-                    <li><a href="BeginnersGuide.html">新手指南</a></li>
-                    <li><a href="Aboutus.html">关于我们</a></li>
-                    <li><a href="Members.html">我的账户</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_openAboutUs">关于我们</a></li>
+                    <li><a href="members.html">我的账户</a></li>
                 </ul>
             </div>
             <div class="clr"></div>
@@ -68,7 +68,7 @@
         <ul class="imglist">
         	<c:forEach items="${goods }" var="good">
 	        	<li>
-	                <span><img src="admin/zwtp_2_gi/images/img01.png" /></span>
+	                <span><img src="${pageContext.request.contextPath }/admin/zwtp_2_gi/images/${good.url}" /></span>
 	                <h2><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">${good.goodName }</a></h2>
 	                <p><a href="${pageContext.request.contextPath }/homeAction_goodDetails?good.goodId=${good.goodId}">详情</a></p>
 	            </li>

@@ -66,7 +66,7 @@
     <div class="center">
     	<form action="${pageContext.request.contextPath }/userAction_buyGoods" method="post">
     		<input type="hidden" name="good.goodId" value="${good.goodId }">
-    		<div><img src="admin/zwtp_2_gi/images/img01.png" /></div>
+    		<div><img src="${pageContext.request.contextPath }/admin/zwtp_2_gi/images/${good.url}" /></div>
 	        <h2>产品名称</h2>
 	        <p><input name="good.goodName" type="text" value="${good.goodName }" readonly="readonly"></p>
 	        <h2>产品介绍</h2>

@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -13,27 +15,27 @@
     <link rel="stylesheet" type="text/css" href="images/mycjj/style1.css">
 <body style="margin: 0;">
 <!-- 1. 顶部海报 -->
-<div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px">
+    <div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px">
     <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 93px">客服热线 : 18408248053</span>
     <img src="https://market.wukonglicai.com/pc/spread/images/phone.png" style="float: right;margin-top: 4px;margin-right: 10px;">
-    <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px">免费注册</span>
-    <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px">登录</span>
-    <img src="http://www.gomemyc.com/global/img/icon1home.png" style="font-size: 16px;float: left;margin-top: 7px;margin-left: 60px">
-    <span style="font-size: 12px;float: left;margin-top: 4px;margin-left: 3px;color: black">国美金融</span>
-    <div style="font-size: 12px;float: left;margin-top: 4px;margin-left: 5px">(市场有风险，投资需谨慎)</div>
-</div>
+        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openRegister';">免费注册</span>
+        <span style="cursor:pointer;font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openLogin';">登录</span>
+        <img src="http://www.gomemyc.com/global/img/icon1home.png" style="font-size: 16px;float: left;margin-top: 7px;margin-left: 60px">
+        <span style="font-size: 12px;float: left;margin-top: 4px;margin-left: 3px;color: black">国美金融</span>
+        <div style="font-size: 12px;float: left;margin-top: 4px;margin-left: 5px">(市场有风险，投资需谨慎)</div>
+    </div>
 <!-- 2. 首页导航 -->
 <div class="header">
     <div class="header_resize">
         <div class="logo"><h1><a href="index.html"><img src="images/mycjj/logo.png" style="width: 231px;height: 78px;"></a> <small style="color: red;background-color: white">让你的钱聪明起来</small></h1></div>
         <div class="menu_nav">
             <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="investment.html">我要投资</a></li>
-                <li><a href="bailout.html">我要融资</a></li>
-                <li><a href="BeginnersGuide.html">新手指南</a></li>
-                <li class="active"><a href="Aboutus.html">关于我们</a></li>
-                <li><a href="Members.html">我的账户</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_home">首页</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_showGoods">我要投资</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
+                <li><a href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
+                <li class="active"><a href="javascript:return false;">关于我们</a></li>
+                <li><a href="members.html">我的账户</a></li>
             </ul>
         </div>
         <div class="clr"></div>
