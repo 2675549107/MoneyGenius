@@ -58,7 +58,8 @@
     <div class="equity">
     	<form action="${pageContext.request.contextPath }/userAction_Sell" method="post">
     		<h2>选择头像</h2>
-	        <input type="file" name="good.url" class="product">
+	        <div><img src="admin/zwtp_2_gi/images/img17.png" id="show" class="portrait" /></div>
+            <div><input type="file" id="file" onchange="c()" name="good.url" class="product"></div>
 	        <h2>产品名称</h2>
 	        <input type="text" name="good.goodName" class="product">
 	        <h2>产品介绍</h2>
@@ -79,6 +80,16 @@
 	        </div>
     	</form>
     </div>
+    <script type="text/javascript">
+    function c() {
+        var r = new FileReader();
+        f = document.getElementById('file').files[0];
+        r.readAsDataURL(f);
+        r.onload = function(e) {
+            document.getElementById('show').src = this.result;
+        };
+    }
+    </script>
     <!--5. 页脚 -->
     <img src="images/mycjj/footer.jpg" style="width: 100%;/*position: absolute*/;top: 2496px;">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->

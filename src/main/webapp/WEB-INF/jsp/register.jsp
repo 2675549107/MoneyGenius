@@ -72,11 +72,11 @@
             <div class="menu_nav">
                 <ul>
                     <li class="active"><a href="${pageContext.request.contextPath }/homeAction_home">首页</a></li>
-                    <li><a href="investment.html">我要投资</a></li>
-                    <li><a href="bailout.html">我要融资</a></li>
-                    <li><a href="BeginnersGuide.html">新手指南</a></li>
-                    <li><a href="Aboutus.html">关于我们</a></li>
-                    <li><a href="Members.html">我的账户</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_showGoods">我要投资</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_openBailout">我要融资</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_openBeginnersGuide">新手指南</a></li>
+                    <li><a href="${pageContext.request.contextPath }/homeAction_openAboutUs">关于我们</a></li>
+                    <li><a href="${pageContext.request.contextPath }/userAction_openMembers">我的账户</a></li>
                 </ul>
             </div>
             <div class="clr"></div>

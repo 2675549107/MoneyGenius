@@ -574,7 +574,7 @@
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
-<<<<<<< HEAD
+
      <!--5. 页脚 -->
     <img src="images/mycjj/footer.jpg" style="width: 100%;position: absolute;top: 2496px;">
         <script>
@@ -591,26 +591,7 @@
     }
     </script>
   <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>  
-=======
-    <!--5. 页脚 -->
-    <img src="images/mycjj/footer.jpg"
-        style="width: 100%; position: absolute; top: 2496px;">
-    <script>
-					var oLoad = getByClass(document.body, 'pxs_loading')[0];
-					var oImgBox = getByClass(document.body,
-							'pxs_slider_wrapper')[0];
-					//var oEvent=ev||event;
-					//var obj=oEvent.srcElement||oEvent.target;
-					var imgs = document.getElementsByTagName('img');
-					for (var i = 0; i < imgs.length; i++) {
-						imgs[i].onload = function() {
-							oLoad.style.display = 'none';
-						}
-						oImgBox.style.display = 'block';
-					}
-				</script>
-    <script  src="js/jquery-3.2.1.min.js"></script>
->>>>>>> 29e07da11cbcc7a2819dfd6a83d46cae4f52ff86
+  
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="https://cdn.bootcss.com/Chart.js/2.6.0/Chart.js"></script>
     <script type="text/javascript">
