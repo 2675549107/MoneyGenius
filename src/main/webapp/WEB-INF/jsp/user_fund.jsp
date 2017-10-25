@@ -32,14 +32,14 @@
    <table id="idData" class="tab_account-detail-list" style="margin-top: 50px">
         <tr>
             <th>来自</th>
-            <th>金额</th>
+          <!--   <th>金额</th> -->
             <th class="textLeftColumn">项目</th>
         </tr>
         <c:forEach items="${goods }" var="good" varStatus="status">
         	<tr>
             	<td>${currentuser.userName }</td>
-            	<td>¥${uags.get(status.index).totalMoney }</td>
-            	<td class="textLeftColumn">${good.goodName }</td>
+<%--             	<td>¥${uags.get(status.index).totalMoney }</td>
+ --%>            	<td class="textLeftColumn">${good.goodName }</td>
         	</tr>
         </c:forEach>
     </table>

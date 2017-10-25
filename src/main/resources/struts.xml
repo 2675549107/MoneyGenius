@@ -38,8 +38,21 @@
     		 <!-- 打开新手指南 -->
     		 <result name="openBeginnersGuide">/WEB-INF/jsp/BeginnersGuide.jsp</result>
     	</action>
-    
-        <action name="userAction_*" class="userAction" method="{1}">
+           
+        <action name="adminAction_*" class="adminAction" method="{1}">
+            <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+        	<result name="getAllUser">admin/zwtp_2_gi/index.jsp</result>
+        	<result name="deleteUser">admin/zwtp_2_gi/index.jsp</result>
+        	<result name="modifyUser">admin/zwtp_2_gi/miderfyUser.jsp</result>
+        	<result name="openS">/WEB-INF/jsp/admin/search.jsp</result>
+        	<result name="allGood">admin/zwtp_2_gi/good.jsp</result>
+        	<result name="deleteGood">admin/zwtp_2_gi/good.jsp</result>
+        	<result name="modifyGood">admin/zwtp_2_gi/miderfyGood.jsp</result>
+        </action>
+        
+         <action name="userAction_*" class="userAction" method="{1}">
           <!-- 使用拦截器 -->
             <interceptor-ref name="defaultStack"/>
             <interceptor-ref name="authority"/>
@@ -53,14 +66,5 @@
     		<result name="openfund">/WEB-INF/jsp/user_fund.jsp</result>
         </action>
         
-        <action name="adminAction_*" class="adminAction" method="{1}">
-        	<result name="getAllUser">admin/zwtp_2_gi/index.jsp</result>
-        	<result name="deleteUser">admin/zwtp_2_gi/index.jsp</result>
-        	<result name="modifyUser">admin/zwtp_2_gi/miderfyUser.jsp</result>
-        	<result name="openS">/WEB-INF/jsp/admin/search.jsp</result>
-        	<result name="allGood">admin/zwtp_2_gi/good.jsp</result>
-        	<result name="deleteGood">admin/zwtp_2_gi/good.jsp</result>
-        	<result name="modifyGood">admin/zwtp_2_gi/miderfyGood.jsp</result>
-        </action>
     </package>
 </struts>

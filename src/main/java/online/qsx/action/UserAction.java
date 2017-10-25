@@ -40,7 +40,7 @@ public class UserAction {
 	
 	private List<UserAndGood> uags;
 	
-	private List<Good> goods = new ArrayList<Good>();
+	private List<Good> goods = new ArrayList<Good>(100);
 	
 	/**购买的数量*/
 	private Integer num;
@@ -97,6 +97,7 @@ public class UserAction {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		user = (User)session.getAttribute("currentuser");
 		uags = goodServer.getMyFund(user.getUesrId());
+		System.out.println(uags.size());
 		for(int i=0 ; i<uags.size(); i++) {
 			goods.add(goodServer.getGoodsById(uags.get(i).getGoodId()));
 		}
