@@ -22,11 +22,13 @@
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/images/mycjj/style1.css">
+     <link rel="stylesheet" type="text/css" href="images/mycjj/style1.css">
+      <link rel="stylesheet" type="text/css" href="images/mykevin/css/basic.css">
 </head>
 
 <body style="margin: 0;">
     <!-- 1. 顶部海报 -->
-    <div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px">
+    <div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px;margin-bottom: 60px;">
         <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 93px">客服热线 : 18408248053</span>
         <img src="https://market.wukonglicai.com/pc/spread/images/phone.png" style="float: right;margin-top: 4px;margin-right: 10px;">
         <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px">免费注册</span>
@@ -61,9 +63,6 @@
         <p>购买金额：</p>
         <a href="${pageContext.request.contextPath }/homeAction_showGoods">返回首页</a>
     </div>
-
-    <!--5. 页脚 -->
-    <img src="images/mycjj/footer.jpg" style="width: 100%;position: absolute;top: 902px;">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Optional JavaScript -->

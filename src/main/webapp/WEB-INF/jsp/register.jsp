@@ -51,15 +51,16 @@
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="images/mycjj/style1.css">
+    <link rel="stylesheet" type="text/css" href="images/mykevin/css/basic.css">
 </head>
 
 <body>
     <!-- 1. 顶部海报 -->
-    <div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px">
+    <div style="background-color: #F8F8F8;width: 100%;height: 30px;margin-bottom: 35px;margin-top: 0px;margin-bottom: 60px;">
     <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 93px">客服热线 : 18408248053</span>
     <img src="https://market.wukonglicai.com/pc/spread/images/phone.png" style="float: right;margin-top: 4px;margin-right: 10px;">
-        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openRegister';">免费注册</span>
-        <span style="font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openLogin';">登录</span>
+        <span style="cursor: pointer;font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openRegister';">免费注册</span>
+        <span style="cursor: pointer;font-size: 12px;float: right;margin-top: 4px;margin-right: 10px" onclick="javascript:window.location.href='${pageContext.request.contextPath }/homeAction_openLogin';">登录</span>
         <img src="http://www.gomemyc.com/global/img/icon1home.png" style="font-size: 16px;float: left;margin-top: 7px;margin-left: 60px">
         <span style="font-size: 12px;float: left;margin-top: 4px;margin-left: 3px;color: black">国美金融</span>
         <div style="font-size: 12px;float: left;margin-top: 4px;margin-left: 5px">(市场有风险，投资需谨慎)</div>
@@ -89,7 +90,7 @@
         <form name="form" onsubmit="return validate()" action="${pageContext.request.contextPath }/homeAction_register" method="post">
             <div>
                 用户名称：
-                <input type="text" class="name" name="user.userName" id="name" placeholder="请输入您的用户名！" required="" pattern="[A-Za-z]{6-20}">
+                <input type="text" class="name" name="user.userName" id="name" placeholder="请输入您的用户名！" required="" pattern="[a-z]{6-20}">
                 <br>
             </div>
             <div>
