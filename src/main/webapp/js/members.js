@@ -43,6 +43,8 @@ $(function () {
                 break;
         }
         // 抓取页面并进行分页
+        $(".loadArea tr").remove();
+
         $("#div_article-bg-right").load(pathn + " #div_article-bg-right", function () {
             var showRowNum = 5; // 每页行数
             var rowSum = $(".div_content tr").length - 2;  // 总行数
