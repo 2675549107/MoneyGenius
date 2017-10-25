@@ -56,39 +56,37 @@
     </nav>
 
     <div>
-        <img src="images/mycjj/load.png" width="100%">
+        <img src="images/mycjj/load.png" width="1355px">
     </div>
 
-    <section id="topnav" class="row text-center placeholders" style="position: absolute;top: 388px;left: 234px">
+    <section id="topnav" class="row text-center placeholders" style="width: 900px;position: absolute;top: 388px;left: 234px">
         <div class="col-6 col-sm-3 placeholder">
-            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <p><a href="${pageContext.request.contextPath }/userAction_openSell"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
             <h4>赎楼贷</h4>
             <div class="text-muted">还清按揭 助力卖方</div>
         </div>
         <div class="col-6 col-sm-3 placeholder">
-            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <p><a href="${pageContext.request.contextPath }/userAction_openSell"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
             <h4>宅急贷</h4>
             <span class="text-muted">房屋置换 未售先贷</span>
         </div>
         <div class="col-6 col-sm-3 placeholder">
-            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <p><a href="${pageContext.request.contextPath }/userAction_openSell"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
             <h4>房抵贷</h4>
             <span class="text-muted">房产抵押 贷为急用</span>
         </div>
         <div class="col-6 col-sm-3 placeholder">
-            <p><a href="financing.html"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
+            <p><a href="${pageContext.request.contextPath }/userAction_openSell"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a></p>
             <h4>企易贷</h4>
             <span class="text-muted">资金周转 经营无忧</span>
         </div>
     </section>
-    <section style="position: absolute;top: 820px;left: 547px">
-      <div class="financ">
-          <a type="submit" href="${pageContext.request.contextPath }/userAction_openSell">我要融资</a>
-       </div>
-    </section>
+    <div class="financ">
+    	<a type="submit" href="${pageContext.request.contextPath }/userAction_openSell">我要融资</a>
+    </div>
     
     <!--5. 页脚 -->
-    <img src="images/mycjj/footer.jpg" style="width: 100%;position: absolute;top: 902px;">
+    <img src="images/mycjj/footer.jpg" style="width: 100%;/* position: absolute; */top: 902px;">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Optional JavaScript -->

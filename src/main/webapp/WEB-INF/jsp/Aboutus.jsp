@@ -44,7 +44,7 @@
 <div class="container" style="min-width: 1200px">
     <div class="left-menu">
         <ul id="_Navigation">
-            <li class="current"><a href="Aboutus.html">安全保障</a></li>
+            <li class="current"><a href="${pageContext.request.contextPath }/homeAction_openAboutUs">安全保障</a></li>
             <li><a href="Aboutus1.html">合规进程</a></li>
             <li><a href="Aboutus2.html">投资技巧</a></li>
             <li><a href="Aboutus3.html">法律政策</a></li>

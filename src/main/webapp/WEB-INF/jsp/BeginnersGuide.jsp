@@ -95,7 +95,7 @@
 </div>
 
 <!-- 页尾 -->
-<img src="images/kevinChen/images/guide/pagelast.jpg" style="width: 100%;position: absolute;top: 2392px;">
+<img src="images/kevinChen/images/guide/pagelast.jpg" style="width: 100%;/* position: absolute; */top: 2392px;">
 
 </body>
 

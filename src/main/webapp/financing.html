@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <!-- Required meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+    <title>我要融资</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="images/mycjj/style.css" />
@@ -52,29 +52,40 @@
         </div>
     </div>
     </nav>
-    <div class="equity">
-        <h2>选择头像</h2>
-        <input type="file" class="product">
-        <h2>产品名称</h2>
-        <input type="text" class="product">
-        <h2>产品介绍</h2>
-        <textarea class="product"></textarea>
-        <h2>融资价格</h2>
-        <input type="text" class="product">
-        <h2>融资数量</h2>
-        <input type="text" class="product">
-        <h2>产品组名</h2>
-        <select class="product" required="">
-            <option value="">请选择</option>
-            <option value="">一组</option>
-            <option value="">二组</option>
-            <option value="">三组</option>
-            <option value="">四组</option>
-        </select>
-        <div>
-            <button type="submit">提交</button>
+    <form>
+        <div class="equity">
+            <h2>选择头像</h2>
+            <div><img src="admin/zwtp_2_gi/images/img17.png" id="show" class="portrait" /></div>
+            <div><input type="file" id="file" onchange="c()"></div>
+            <h2>产品名称</h2>
+            <input type="text" class="product">
+            <h2>产品介绍</h2>
+            <textarea class="product"></textarea>
+            <h2>融资价格</h2>
+            <input type="text" class="product">
+            <h2>融资数量</h2>
+            <input type="text" class="product">
+            <h2>产品组名</h2>
+            <select class="product" required="">
+                <option value="">请选择</option>
+                <option value="">一组</option>
+                <option value="">二组</option>
+                <option value="">三组</option>
+                <option value="">四组</option>
+            </select>
+            <div><button type="submit">提交</button></div>
         </div>
-    </div>
+    </form>
+    <script type="text/javascript">
+    function c() {
+        var r = new FileReader();
+        f = document.getElementById('file').files[0];
+        r.readAsDataURL(f);
+        r.onload = function(e) {
+            document.getElementById('show').src = this.result;
+        };
+    }
+    </script>
     <!-- <div>
             <img src="images/mycjj/load1.png" width="100%">
         </div>
