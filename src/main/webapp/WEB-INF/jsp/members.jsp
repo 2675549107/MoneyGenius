@@ -80,7 +80,7 @@
         </table>
     </div>
     <!-- 右 -->
-    <div id="div_article-bg-right">
+    <div id="div_article-bg-right" class="loadArea">
     </div>
     <!-- 左下 -->
     <div id="div_article-bg-left-under" class="div_article-bg">

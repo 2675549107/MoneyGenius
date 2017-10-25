@@ -23,7 +23,7 @@ public class VerificationInterceptor extends AbstractInterceptor{
         if (null != user) {
             return invocation.invoke();
         } else {
-            return Action.LOGIN;
+            return "login";
         }
 	}
 
