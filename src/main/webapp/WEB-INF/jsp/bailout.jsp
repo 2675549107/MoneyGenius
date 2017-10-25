@@ -57,11 +57,7 @@
     </nav>
 
     <div>
-<<<<<<< HEAD
         <img src="images/mycjj/load.png" width="100%">
-=======
-        <img src="images/mycjj/load.png" width="1366px">
->>>>>>> ab6a283e657e5fec2d7736573dc6f14e6975b412
     </div>
 
     <section id="topnav" class="row text-center placeholders" style="width: 900px;position: absolute;top: 428px;left: 234px">

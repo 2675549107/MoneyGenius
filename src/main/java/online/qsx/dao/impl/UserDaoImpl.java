@@ -67,12 +67,14 @@ public class UserDaoImpl implements UserDao{
 	        userStatus =100;
 	    }
 	    User user = list.get(0);
+	    String password = user.getPassword();
 	    System.out.println(user.toString());
 	    user.setUserName(username);
 	    user.setEmail(email);
 	    user.setPassword(String.valueOf(tel));
 	    user.setCreditworthiness(userStatus);
 	    user.setStatus(userStatus1);
+	    user.setPassword(password);
 		baseDao.getHibernateTemplate().update(user);
 	}
 
