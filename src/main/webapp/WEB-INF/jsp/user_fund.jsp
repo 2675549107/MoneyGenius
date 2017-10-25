@@ -26,11 +26,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" type="text/css" href="images/mycjj/style1.css">
 </head>
-<body style="margin: 0;" >
+<body style="margin: 0;">
 <!-- 刷新内容区域 -->
 <div id="div_article-bg-right" class="div_content">
-
-    <table id="idData" class="tab_account-detail-list" style="margin-top: 50px">
+   <table id="idData" class="tab_account-detail-list" style="margin-top: 50px">
         <tr>
             <th>来自</th>
             <th>金额</th>
@@ -48,11 +47,12 @@
     <table class="tab_btn_list">
         <tr>
             <td colspan="3">
-                <button class="btn">首页</button>
-                <button class="btn">上一下</button>
-                <span class="btn" style="background: #dddddd; color: orangered">1</span>
-                <button class="btn">下一页</button>
-                <button class="btn">尾页</button>
+                <button id="home" class="btn">首页</button>
+                <button id="last" class="btn">上一页</button>
+                <input type="text" class="btn showPageNum" value="1">
+                <input type="text" class="btn showPageSum" value="" disabled="disabled" style="background: #f8f9fa; color: #333">
+                <button id="next" class="btn">下一页</button>
+                <button id="trailer" class="btn">尾页</button>
             </td>
         </tr>
     </table>

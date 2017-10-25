@@ -157,7 +157,7 @@ footer {
 
 .tab_account-detail-list td {
     text-align: center;
-    line-height: 30px;
+   line-height: 30px;
     font-size: 17px;
 }
 
@@ -183,9 +183,22 @@ footer {
 }
 
 .tab_btn_list button,
-.tab_btn_list span {
+.tab_btn_list input {
     margin-top: 10px;
+    padding: 6px 0;
 }
+
+.tab_btn_list input {
+
+    width: 45px;
+    color: #ff5e74;
+    background: #dddddd;
+}
+
+.tab_btn_list input.showPageSum {
+    text-align: left;
+}
+
 
 .tab_btn_list button:hover {
     background: #ff5e74;
